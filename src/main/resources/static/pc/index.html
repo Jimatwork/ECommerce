@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>酷编</title>
+		<link rel="stylesheet" href="css/slideshow.css" />
+		<link rel="stylesheet" href="css/CoolBraided.css" />
+		<script src="js/jquery-2.1.0.js" ></script>
+		<script src="js/public.js" ></script>
+		<script src="js/index.js" ></script>
+		<script src="js/slideshow.js" ></script>
+		<style>
+			.guanggao{
+				overflow: hidden;
+			}
+			.guanggao a img{
+				width: 100%;
+				height: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li class="confirm">头条</li>
+				<li>热门</li>
+				<li>发现</li>
+			</ul>
+		</header>
+		<article>
+			<div class="guanggao">
+				<!--广告-->
+			</div>
+
+			<div class="clears">
+				<div class="journalism">
+					<div class="float_lefts journalism_d">
+						<ul class="journalism_left">
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+					<div class="float_lefts journalism_rigtg">
+						<div class="banner">
+							<img class="change pre"  src="img/pre.png" >
+							<img class="change next" src="img/next.png" >
+							
+							<div class="cirbox" >
+								<div class="cir cr"></div>
+								<div class="cir"></div>
+								<div class="cir"></div>
+								<div class="cir"></div>
+							</div>
+							<div class="imgbox">
+								
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="lives clears">
+				<ul class="livest">
+					
+				</ul>
+			</div>
+			<div class="clears dibbler">
+				<ul class="dibbler_zs">
+					
+				</ul>
+			</div>
+			<ul class="finished">
+				<!--<li>
+					<h3 class="sheadline"><span>&#xe60e;</span><span>时事</span><span class="genduo" data_type = "5">+更多</span></h3>
+					<div>
+						<a class="finished_1" href="javascript:void(0)">
+							<img class="float_lefts" src="img/huanz.jpg" />
+							<div class="float_lefts finished_datas">
+								<div class="byline">AADC专题啊实打实大师大撒大所大所大所大所大撒啊实打实大师大撒大撒大</div>
+								<p>1018年3月24日美国，而过分个人个人观点发个邮件他为恶如教育可以覆盖给予我跨域跨域快哦我偶尔提取物 </p>
+								<p class="interaction">
+									<span>汉纳编辑</span>
+									<span>&#xe671;1039</span>
+									<span>&#xe621;13</span>
+									<span>&#xe607;5</span>
+									<span>&#xe60e;2018-3</span>
+								</p>
+							</div>
+						</a>
+					</div>
+				</li>-->
+			</ul>
+		</article>
+		
+		<footer>
+			
+		</footer>
+	</body>
+	<script>
+		$('body').on('click', '.genduo', function() {
+			var data_type = $(this).attr("data_type");
+			sessionStorage.setItem('id', data_type);
+			window.location.href = "subpage.html";
+		});
+		
+		$('body').on('click', '.htmls', function() {
+			var data_id = $(this).attr("data_id");
+			sessionStorage.setItem('htmls', data_id);	
+			window.location.href = "displayDesign.html";
+		});
+	</script>
+</html>

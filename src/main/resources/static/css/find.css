@@ -1,0 +1,38 @@
+#topDiv {
+	display: none;
+	position: absolute;
+	width: 550px;
+	height: 120px;
+	border: 1px solid lightblue;
+	background-color: #D2D2D2;
+	z-index: 100;
+	top: 300px;
+	left: 400px;
+}
+
+#SubPopups {
+	background-color: white;
+	position: absolute;
+	height: 40px;
+	width: 540px;
+	top: 35px;
+	left: 5px;
+}
+
+#SubPopups input {
+	position: absolute;
+	top: 10px;
+	left: 80px;
+}
+
+#SubPopups span {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+#toptj {
+	position: absolute;
+	left: 200px;
+	bottom: 5px;
+}

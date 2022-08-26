@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bootstrap/css/plugins/summernote/summernote-0.8.8.css">
+    <link href="bootstrap/css/animate.css" rel="stylesheet">
+    <link href="bootstrap/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="bootstrap/css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/webuploader/webuploader.css"/>
+
+</head>
+<div class="summernote"></div>
+
+<body>
+</body>
+<script src="http://hovertree.com/ziyuan/jquery/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script src="dist/summernote.js"></script>
+<script src="dist/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/requestip.js"></script>
+<script src="js/webuploader/webuploader.js"></script>
+<script src="js/webuploader/video_upload.js"></script>
+<script>
+    $().ready(function () {
+
+        $('.summernote').summernote({
+            height: '220px',
+            lang: 'zh-CN',
+        });
+    });
+</script>
+</html>

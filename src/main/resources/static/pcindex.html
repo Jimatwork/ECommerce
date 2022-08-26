@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>酷编</title>
+		<link rel="stylesheet" href="pc/css/slideshow.css" />
+		<link rel="stylesheet" href="pc/css/CoolBraided.css" />
+		<script src="pc/js/jquery-2.1.0.js" ></script>
+		<script src="pc/js/public.js" ></script>
+		<script src="pc/js/index.js" ></script>
+		<script src="pc/js/slideshow.js" ></script>
+		<style>
+			.guanggao{
+				overflow: hidden;
+			}
+			.guanggao a{
+				width: 50%;
+				float: left;
+			}
+			.guanggao a img{
+				width: 100%;
+				height: 120px;
+			}
+			.positions{
+				z-index: 999;
+				position: fixed;
+				height: 500px;
+				width: 300px;
+				/*background-image: url(img/huanz.jpg);*/
+				background-size: 100% 100%;
+				top: 50%;
+				margin-top: -250px;
+			}
+			.positions img{
+				width: 100%;
+				height: 100%;
+			}
+			.guanggao_left{
+				left: 0;
+			}
+			.guanggao_right{
+				right: 0;
+			}
+			.guanggao_p{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				text-align: center;
+				width: 100%;
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<ul>
+				<li class="confirm">头条</li>
+				<li>热门</li>
+				<li>发现</li>
+			</ul>
+		</header>
+		<article>
+			<div class="guanggao">
+				<!--上广告-->
+			</div>
+			<div class="guanggao_left positions">
+				<!--左广告-->
+
+			</div>
+			<div class="guanggao_right positions">
+				<!--右广告-->
+
+			</div>
+			<div class="clears">
+				<div class="journalism">
+					<div class="float_lefts journalism_d">
+						<ul class="journalism_left">
+							<li>
+								
+							</li>
+						</ul>
+					</div>
+					<div class="float_lefts journalism_rigtg">
+						<div class="banner">
+							<img class="change pre"  src="pc/img/pre.png" >
+							<img class="change next" src="pc/img/next.png" >
+							
+							<div class="cirbox" >
+								<div class="cir cr"></div>
+								<div class="cir"></div>
+								<div class="cir"></div>
+								<div class="cir"></div>
+							</div>
+							<div class="imgbox">
+								
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="lives clears">
+				<ul class="livest">
+					
+				</ul>
+			</div>
+			<div class="clears dibbler">
+				<ul class="dibbler_zs">
+					
+				</ul>
+			</div>
+			<ul class="finished">
+				<!--数据展示-->
+			</ul>
+		</article>
+		
+		<footer>
+			
+		</footer>
+	</body>
+	<script>
+		$('body').on('click', '.genduo', function() {
+			var data_type = $(this).attr("data_type");
+			sessionStorage.setItem('id', data_type);
+			window.location.href = "pc/subpage.html";
+		});
+		
+		$('body').on('click', '.htmls', function() {
+			var data_id = $(this).attr("data_id");
+			window.location.href = "pc/displayDesign.html?conId="+data_id;
+		});
+	</script>
+</html>

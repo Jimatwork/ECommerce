@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link href="dist/summernote.css" rel="stylesheet" />
+<script type="text/javascript" src="js/requestip.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script src="dist/summernote.js"></script>
+<script src="dist/lang/summernote-zh-CN.js"></script>
+<!-- 中文-->
+
+<style>
+.m {
+	width: 800px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.modal-backdrop {
+	z-index: 99;
+}
+</style>
+<script>
+	$(function() {
+		$('.summernote').summernote({
+			height : 400,
+			tabsize : 2,
+			lang : 'zh-CN'
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="m">
+		<div class="summernote"></div>
+	</div>
+	<button id="asd">提交</button>
+	<script>
+		$('#asd').click(function() {
+			var ss = $(".panel-body").html();
+			console.log(ss);
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				$('#col_ban').html(null);
+		$('#ban').html(null);
+		$('#pl_comment').html(null);
+		var it = "";
+		it += '<div class="banDel">';
+		it += '<div class="delete" id="add_news">';
+		it += '<div class="form_boxA" >';
+		it += '<div style="text-align: right; cursor: default; height: 15px;">';
+		it += '<span class="sp"><img src="img/shanchu.png" /></span>';
+		it += '</div>';
+		it += '<div id="Popup">';
+		it += '<div id="SubPopup">';
+		it += '<div class="form_boxC">';
+		it += '<table cellpadding="0" cellspacing="0">';
+		it += '<tr>'
+		it += '<th width="100">标题 <span class="f_cB">:</span></th>';
+		it += '<td>';
+		it += '<div>';
+		it += '<input id="intitle" class="txtbox floatL" style="width:400px;" name="" type="text" size="5">';
+		it += '</div></td></tr>';
+		it += '<tr>'
+		it += '<th>摘要 <span class="f_cB">:</span></th>';
+		it += '<td>';
+		it += '<div>';
+		it += '<input id="inconRemark" class="txtbox floatL" style="width:400px;" name="" type="text" size="5">';
+		it += '</div></td></tr>';
+		it +=  '<tr>';
+		it += '<th class="web_up">缩略图 <span class="f_cB">:</span></th>';
+		it += '<td class="web_up">';
+		it += '<center>';
+		it += '<h1 id="mytitle" style="display: none;"></h1>';
+		it += '<div id="uploader" class="wu-example">';
+		it += '<div id="thelist" class="uploader-list"></div>';
+		it += '<div id="jindutiao" class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="demo" style="width: 300px;height: 24px;">';
+		it += '<div style="height: 24px;" class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>';
+		it += '</div>';
+		it += '<div class="btns">';
+		it += '<div id="picker">选择文件</div>';
+		it += '</div></div></center></td></tr>';
+		it += '<tr>';
+		it += '<th>目录 <span class="f_cB">:</span></th>';
+		it += '<td><div>';
+		it += '<select name="sel" class="selectbox" id="sel1">';
+		it += '<option value=""></option></select></div>';
+		it += '</td></tr>';
+		it += '</table>';
+		it += '<div class="m">'; 
+		it += '<div class="summernote"></div>';
+		it += '</div>';
+		it += '</div></div>';
+		it += '<div id="BtmBtn">';
+		it += '<div class="btn_boxB floatR mag_l20">';
+		it += '<input name="" type="button" value="取消" onclick="CloseDiv(addDiv)" />';
+		it += '</div>';
+		it += '<div class="btn_box floatR">';
+		it += '<input id="asd" name="" type="button" value="提交" />';
+		it += '</div></div></div></div></div></div>';
+		$('#add_new').html(it);
+		$(".banDel").show();
+	</script>
+
+</body>
+
+</html>

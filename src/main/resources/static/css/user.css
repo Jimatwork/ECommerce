@@ -1,0 +1,38 @@
+.conShow th {
+	text-align: center;
+	border: 1px solid #dcdbdb;
+}
+
+.user_tr {
+	height: 40px;
+}
+
+.simg1 {
+	position: absolute;
+	left: 210px;
+	top: 36px;
+	width: 450px;
+	height: 300px;
+	z-index: 999;
+	display: none;
+}
+
+.timg {
+	position: relative;
+}
+
+.simg {
+	width: 50px;
+	height: 26px;
+}
+
+.banDel {
+	z-index: 999;
+}
+.delP2 a{
+	padding-left: 30px;
+	margin-left: 100px;
+}
+.delP1{
+	text-align: center;
+}

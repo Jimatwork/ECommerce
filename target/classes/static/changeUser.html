@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>修改用户信息</title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<style type="text/css">
+			.bbD .bbDP .btn_ok {
+				margin-top: 10px;
+				margin-right: 10px;
+				margin-left: 20px;
+			}
+			.bacen{
+				margin-top: 5%;
+			}
+			.start_img,
+			.wa_img,
+			.us_img,
+			.user_wa_img {
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				top: -20px;
+				left: 290px;
+			}
+			
+			.nick {
+				border: none;
+			}
+			
+			.btn_yes {
+				margin-right: 15px;
+			}
+			
+			.show_time {
+				border: none;
+				width: 30px;
+			}
+			.start_img1,.wa_img1,.us_img1,.user_wa_img1{
+				position: absolute;
+				display: none;
+				width: 400px;
+				height: 300px;
+				left: 355px;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/requestip.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/changeUser.js"></script>
+
+	</head>
+
+	<body>
+		<div id="pageAll">
+			<div class="pageTop">
+				<div class="page">
+					<span>修改用户信息&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" id="ios" class="buttons">显示ios微信登录</button>
+						
+					</span>
+				</div>
+			</div>
+			<form id="form_user3" method="post">
+				<!-- 修改密码页面样式 -->
+				<div class="bacen">
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;用户昵称：&nbsp;&nbsp;<input class="nick" type="text" name="nickName" /> <input name="id" type="hidden" class="user_id" /><input type="hidden" class="ios_flag" name="flag"/>
+					</div><br/>
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;启动图片<br/>&nbsp;&nbsp;&nbsp;&nbsp;显示时间：&nbsp;&nbsp;<input class="show_time" type="text" name="showTime" /><span>&nbsp;&nbsp;(秒)</span>
+					</div>
+					<br/>
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;启动图片：&nbsp;&nbsp;<img src="" class="start_img" alt="没有启动图" /><img src="" class="start_img1" alt="没有启动图" /><input class="start_fil" type="file" name="qdFile" />
+					</div><br/>
+
+					<br/>
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;用户水印：&nbsp;&nbsp;<img src="" class="user_wa_img" alt="没有水印图" /><img src="" class="user_wa_img1" alt="没有水印图" /><input class="sFile" type="file" name="usersFile" />
+					</div>
+					<br/><br/>
+					
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;水印图片：&nbsp;&nbsp;<img src="" class="wa_img" alt="没有水印图" /><img src="" class="wa_img1" alt="没有水印图" /><input class="sFile" type="file" name="sFile" />
+					</div>
+					<br/><br/>
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;用户头像：&nbsp;&nbsp;<img src="" class="us_img" alt="没有头像" /><img src="" class="us_img1" alt="没有头像" /><input class="imgFile" type="file" name="imgFile" />
+					</div>
+					<br/><br/>
+					<div class="bbD">
+						<p class="bbDP">
+							<input type="button" class="btn_ok btn_yes" value="提交" id="tj" />
+							<a class="btn_ok btn_no" href="#">重置</a>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>

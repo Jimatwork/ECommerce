@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/page.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script type="text/javascript" src="js/requestip.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="https://pv.sohu.com/cityjson"></script>
+		<script>
+    		var returnCitySN = returnCitySN.cid*1;
+    		sessionStorage.setItem('returnCitySN', returnCitySN);
+		</script>
+	</head>
+	<style type="text/css">
+		*{
+		}
+	</style>
+	<body style="width: 1900px;">
+
+		<!-- 登录body -->
+		<div class="logDiv">
+			<img class="logBanner" src="img/logBanner.png" />
+			<div class="log_s">
+				<h1 class="login-title">酷Mall PC端管理系统</h1>
+
+				<div class="logGet">
+
+					<!-- 头部提示信息 -->
+					<div class="logD logDtip">
+						<p class="p1">登录</p>
+						
+					</div>
+					<!-- 输入框 -->
+					<form id="login_form">
+						<div class="lgD">
+							<img class="img1" src="img/logName.png" /><input id="uname" type="text" placeholder="输入用户名" name="userName" />
+						</div>
+						<div class="lgD">
+							<img class="img1" src="img/logPwd.png" /><input type="password" placeholder="输入用户密码" name="userPwd" />
+						</div>
+						<div class="logC">
+							<input type="button" value="登录" class="login_sub" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 登录body  end -->
+
+		<!-- 登录页面底部 -->
+		<div class="logFoot">
+			<p class="p1">KuEdit 版权所有@ 2016-2018</p>
+		</div>
+		<!-- 登录页面底部end -->
+
+	</body>
+
+</html>

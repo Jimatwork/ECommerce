@@ -1,0 +1,126 @@
+*{margin: 0;padding: 0;border: 0;font-size: 14px;color: #000;}
+body{margin: 0;padding: 0;font-family: 'iconfont';}
+a,li{display: block;}
+a{text-decoration: none;}
+table{width: 100%;}
+header{position: fixed;top: 0;width: 100%;z-index: 999 !important;}
+.floa-left{float: left;}
+.text-szi{color: #00f;}
+.text-zi{color: #00f;background-color: #999;}
+.text-center{text-align: center;line-height: 35px;}
+#top_div{display: none;line-height: 30px;color: #169BD5;text-align: center;}
+/*头部*/
+.top-bu{overflow: hidden;background-color: #000;}
+.top-bu>h3{line-height: 56px;color: #fff;text-align: center;}
+.ui-hai{overflow: hidden;}
+.ui-hai>ul{width: 50%;background-color: #ccc;}
+/*市镇县选择部分*/	
+.East-Sea-city>ul{width: 50%;background-color: #ccc;}
+.East-Sea-uia,.East-Sea-uib{overflow: auto;height: 460px;}
+/*基本信息，致贫原因*/	
+.cai-dan{padding: 0 4%;background-color: #f2f2f2;overflow: hidden;}
+.cai-dan>li{width: 25%;overflow: hidden;}
+.cai-dan>li>a{line-height: 45px;text-align: center;color: #515151;}
+.cai-dan>li>.sss{color: #000;border-bottom: 1px solid #d00;}
+.s-bottom{width: 100%;height: 36px;}
+.shou-diy>table tr td{text-align: right;padding: 10px;color: #fff;font-size: 30px;}
+.shou-tkoc>table tr *{line-height: 30px;border: 1px solid #ccc;}
+.shou-bottomss{display: none;}
+/*脱贫计划*/	
+.shou-diy{padding: 0 10px;}
+.jihua-top{background-color: #3598dc;}
+.shou-diyp{height: 325px;overflow: auto;}
+.shou-diyp>table tr td{padding: 5px;background-color: #e7505a;}
+.shou-diyp>table tr td>div{color: #fff;text-align: right;}
+.shou-diyp>table tr td>.dada{font-size: 30px;}
+/*内容动态显示部分*/
+.area{width: 100%;overflow: auto;padding-top: 138px;height: 415px;}
+.shows,.deliverk{display: none !important;}
+.confirm{width: 100%;background-color: #000;line-height: 40px;text-align: center;color: #fff;border-radius: 5px;position: fixed;bottom: 0;}
+/*基础数据-行政村-基本信息*/
+.shou-padd{padding: 0 10px;overflow: hidden;}
+.shou-gaishu{padding: 5px;padding-bottom: 10px;}
+.shou-top>table tr td{border: 1px solid #ccc;line-height: 25px;padding-left: 5px;font-size: 12px;}
+.village-a{width: 30%;}
+.village-a{width: 20%;}
+/*基础数据-行政村-发展现状*/
+.shou-xzfz>table tr th{line-height: 30px;border: 1px solid #ddd;color: #00f;}
+.shou-xzfz>table tr td{line-height: 40px;border: 1px solid #ddd;}
+.village-qw{text-align: left;}
+.shou-xzfz>table tr>*{padding: 0 5px;}
+.village-tdw{width: 105px;}
+.xzfz{background-color: #ddd;line-height: 25px;border: 1px solid #000;display: inline-block;width: 65%;}
+/*基础数据-行政村-产业信息*/
+.shou-scxz>table tr td{border: 1px solid #ccc;height: 30px;}
+.shou-scxz>table tr>*{padding: 0 5px;line-height: 20px;}
+.shou-scxz>table tr td>div{border: 1px solid #ddd;margin: 5px 0;line-height: 25px;background-color: #ccc;}
+/*基础数据-区县-基本信息*/
+.shou-qxjc>table tr td{text-indent: 5px;border: 1px solid #ccc;line-height: 25px;font-size: 12px;}
+/*基础数据-区县-重点工作*/
+.shou-bott{text-align: center;line-height: 35px;position: fixed;bottom: 0;width: 100%;}
+.shou-bott>div{width: 50%;background-color: #f2f2f2;}
+.kuan{width: 50%;border: 1px solid #FFECEC;background-color: #F7F7F7;}
+.shou-bott>span{font-size: 14px;}
+.nian{position: absolute;left: 0;top: -143px;}
+.nians{position: absolute;left: 50%;top: -352px;}
+.backgr{background-color: #DF5000;}
+.shou-zhongdian>table tr td{width: 50%;border: 1px solid #ccc;text-indent: 5px;}
+.shou-zhongdian>table tr td>span{display: inline-block;width: 60%;background-color: #eef1f5;text-indent: 5px;line-height: 25px;margin: 5px 0;border: 1px solid #ddd;}
+/*动态监测-贫困户动态-动态信息*/
+.shou-xzdongt>table tr td{border: 1px solid #ccc;}
+.shou-xzdongt>table tr th{border: 1px solid #ccc;height: 30px;background-color: #fbfcfd;}
+.shou-xzdongt>table tr .ssa{background-color: #fbfcfd;}
+.shou-xzdongt>table tr .you{color: #3c7a38;}
+.hong{color: #f00 !important;}
+/*动态监测-贫困户动态-项目进度*/
+.shou-xianmjd>table tr td{line-height: 20px;border: 1px solid #ccc;}
+.shou-xianmjd>table tr th{line-height: 20px;border: 1px solid #ccc;}
+/*动态监测-贫困户动态-脱贫轨迹*/
+.guiji{display: flex;margin-bottom: 20px;}
+.shou-xianmjd{padding: 10px;}
+.shou-xianmjd>div>.yuan{height: 50px;width: 50px;background-color: #E1DDDD;border-radius: 50px;margin: 15px;}
+.shou-xianmjd>div>.yuan>div{height: 35px;width: 35px;background-color: #bab1b1;line-height: 35px;text-align: center;border-radius: 35px;margin: 7.5px;color: #0000FF;}
+.shou-xianmjd>div>.guijit{flex: 1;background-color: #edf1f6;padding: 5px;}
+.asd{color: #fff;}
+/*动态监测-贫困户动态-贫困户列表*/
+.Poverty-list{display: none;}
+.tongyj{background-color: rgba(0,0,0,0.5);padding-top: 100px;position: fixed;left: 0;top: 0;width: 100%;z-index: 999;}
+.shou-suos{background-color: #f2f2f2;overflow: hidden;border-radius: 2px;padding: 15px 0;
+width: 80%;position: absolute;left: 10%;bottom: 30%;}
+.tongysoso{width: 50%;height: 36px;background-color: #169bd5;color: #fff;border-radius: 5px;margin: 10px auto;text-align: center;line-height: 36px;}
+.shou-bott-lfet{width: 35%;text-align: right;line-height: 25px;}
+.shou-bott-right{width: 65%;}
+.shou-suos li{height: 40px;}
+.shou-bott-right li input{border: 1px solid #ccc;width: 90%;height: 25px;}
+.shou-bott-right li select{border: 1px solid #ccc;width: 90%;}
+.shou-suos div{overflow: hidden;}
+/*数据统计-贫困户统计-贫困指标统计*/
+.shou-tjit{margin: 0 5px;}
+.shou-tjit>table tr *{border: 1px solid #ccc;line-height: 35px;}
+.shou-tjit>.shou-gaishu>span{display: inline-block;line-height: 30px;border-radius: 30px;background-color: #337ab7;
+color: #fff;padding: 0 15px;margin: 0 5px;}
+.shou-tjit>.shou-gaishu>span:hover{background-color: #286090;}
+/*数据统计-贫困计划*/
+.shou-jihua>table tr *{line-height: 30px;border: 1px solid #ccc;text-indent: 5px;}
+/*监督管理-部门-攻坚方案*/
+.manage{height: 800px;display: none;}
+.manageso{position: absolute;bottom: 20px;left: 25%;}
+h2{color: #f00;text-align: center;line-height: 30px;}
+.shou-tops{border-bottom: 1px solid #ccc;overflow: hidden;}
+.fabur{text-align: center;width: 100%;font-size: 12px;line-height: 25px;color: #999;}
+.xianshi{color: #999999;padding: 10px;}
+/*监督管理-部门-作战图*/
+.shou-zhantu>img{display: block;width: 100%;height: 50%;margin: 20px 0;}
+/*监督管理-部门-扶贫政策*/
+.shou-fpzc>table tr td{border: 1px solid #ccc;height: 40px;}
+.shou-fpzc>table tr td div{background-color: #ccc;border: 1px solid #999;padding: 0 5px;margin: 0 5px;line-height: 25px;}
+.lianx{width: 20px%;}
+/*监督管理-部门-项目列表*/
+.shou-xmlieb>table tr *{border: 1px solid #ccc;}
+/*监督管理-扶贫记录-扶贫日志*/
+.shou-box>table tr *{border: 1px solid #ccc;height: 30px;padding: 5px;}
+/*第一书记*/
+.shou-diyishuj>table tr *{text-indent: 5px;border: 1px solid #ccc;text-align: left;line-height: 30px;}
+.suos-gao{padding-top: 50px;padding-bottom: 100px;}
+.diyishuj{position: absolute;left: 25%;bottom: 20px;}
+.diyi{display: none;}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>文件上传</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css"  media="all" />
+    <link rel="stylesheet" type="text/css" href="js/webuploader/webuploader.css" />
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/webuploader/webuploader.js"></script>
+    <script src="js/layui/layui.js" charset="utf-8"></script>
+</head>
+<body>
+
+<center>
+
+    <h1 id="mytitle" style="margin-bottom: 100px;margin-top: 100px">文件上传</h1>
+
+    <div id="uploader" class="wu-example">
+        <!--用来存放文件信息-->
+
+        <div id="thelist" class="uploader-list"></div>
+
+
+        <div id="jindutiao" class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="demo" style="width: 300px">
+            <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+        </div>
+
+        <div class="btns">
+            <div id="picker">选择文件</div>
+            <button id="ctlBtn" class="btn btn-default">开始上传</button>
+        </div>
+    </div>
+
+
+</center>
+
+
+    
+	<script src="js/webuploader/upload.js"></script>
+
+</body>
+</html>

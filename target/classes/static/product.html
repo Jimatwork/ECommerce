@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>管理员管理</title>
+    <link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print"/>
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pageNav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/tab.css"/>
+    <link rel="stylesheet" type="text/css" href="css/user.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/pageNav.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/requestip.js"></script>
+    <style type="text/css">
+        .layui-table-cell {
+            height: 40px;
+            line-height: 36px;
+        }
+    </style>
+</head>
+<body>
+<div id="pageAll" style="height: 840px;">
+    <div class="pageTop">
+        <div class="page">
+            <div style="margin-top: 5px">
+                <div class="layui-inline">
+                    <select id="classify" class="form-control">
+                        <option value="bus">商铺名</option>
+                        <option value="product">商品名</option>
+                    </select>
+                </div>
+                <div class="layui-inline">
+                    <input class="form-control" name="id" id="demoReload" autocomplete="off" placeholder="请输入搜索的关键词">
+                </div>
+                <button class="btn btn-primary" id="search_class">搜索</button>
+                <button class="btn btn-primary" id="add_product">增加商品</button>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <!-- user页面样式 -->
+        <div class="connoisseur">
+            <table class="layui-hide" id="test" lay-filter="demo"></table>
+        </div>
+        <!-- user页面样式end -->
+    </div>
+    <script type="text/html" id="barDemo">
+        <a class='layui-btn layui-btn-sm' lay-event='update'>修改</a>
+        <a class='layui-btn layui-btn-sm layui-btn-danger' lay-event='del'>删除</a>
+        <a class='layui-btn layui-btn-sm layui-btn-danger' lay-event='specs_manage'>规格管理</a>
+        <a class='layui-btn layui-btn-sm layui-btn-danger' lay-event='comment_manage'>评论管理</a>
+    </script>
+</div>
+</body>
+<script>
+    layui.use('table', function () {
+        var table = layui.table
+            , form = layui.form;
+        table.render({
+            elem: '#test',
+            url: getRequestIp() + 'getAllProduct',
+            method: 'post',
+            response: {
+                statusName: 'success', //数据状态的字段名称，默认：code
+                statusCode: true, //成功的状态码，默认：0
+                msgName: null, //状态信息的字段名称，默认：msg
+                countName: 'totalSize', //数据总数的字段名称，默认：count
+                dataName: 'list' //数据列表的字段名称，默认：data
+            },
+            id: 'testReload',
+            page: true,
+            cellMinWidth: 10,
+            cols: [[
+                {field: 'id', title: '序号', align: 'center', sort: 'true'},
+                {field: 'name', title: '商品名称', align: 'center'},
+                {
+                    field: 'image', title: '商品图片', align: 'center', templet: function (data) {
+                        return "<img src='" + data.image + "' width='50' height='35' onmouseover='mouseoverzz(" + JSON.stringify(data.image) + ")'/>";
+                    }
+                },
+                {
+                    field: 'bname', title: '店铺名', align: 'center', templet: function (data) {
+                        return data.business.name;
+                    }
+                },
+                {
+                    field: 'isClose', title: '推荐商品', align: 'center', templet: function (data) {
+                        if (data.isSuggest == 0) {
+                            return '<input type="checkbox" checked="checked" name="open" value="' + data.id + '" lay-skin="switch" lay-filter="isClose" lay-text="是|否">';
+                        }
+                        else {
+                            return '<input type="checkbox" name="open" lay-skin="switch" value="' + data.id + '" lay-filter="isClose" lay-text="是|否">';
+                        }
+                    }
+                },
+                {
+                    field: 'status', title: '上架', align: 'center', templet: function (data) {
+                        if (data.business.status == 2) {
+                            if (data.status == 0) {
+                                return '<input checked="\true\"  id="' + "check" + data.id + '" value="' + data.id + '" type="\checkbox\" name="\lock\" title="\正常\" lay-filter="status">';
+
+                            }
+                            else {
+                                return '<input type="\checkbox\"  id="' + "check" + data.id + '"  value="' + data.id + '" name="\lock\" title="\正常\" lay-filter="status">';
+                            }
+                        }
+                        else {
+                            return '<input type="\checkbox\"  id="' + "check" + data.id + '"  value="' + data.id + '" name="\lock\" title="\正常\" lay-filter="status" disabled>';
+                        }
+                    }
+                },
+                {field: 'expressMoney', title: '运费', align: 'center'},
+                {field: 'soldcount', title: '销量', align: 'center'},
+                {field: 'right', align: 'center', title: '操作', width: 310, templet: '#barDemo'}
+            ]]
+        });
+        //监听工具条
+        table.on('tool(demo)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'update') {
+                layer.open({
+                    type: 2,
+                    title: '修改商品',
+                    maxmin: true,
+                    shadeClose: true, // 点击遮罩关闭层
+                    area: ['1150px', '800px'],
+                    content: 'editproduct.html' // iframe的url
+                });
+                sessionStorage.setItem("edit_product_id", data.id);
+            } else if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                    $.ajax({
+                        cache: true,
+                        type: "POST",
+                        url: getRequestIp() + "delProduct",
+                        data: {
+                            id: data.id,
+                        },
+                        async: true,
+                        dataType: "json",
+                        error: function () {
+                            layer.msg('服务器错误', {
+                                icon: 2
+                            });
+                        },
+                        success: function (data) {
+                            if (data.code == 0) {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 1
+                                });
+                            }
+                            else {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 2
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+            else if (layEvent === 'specs_manage') {
+                layer.open({
+                    type: 2,
+                    title: '规格管理',
+                    maxmin: true,
+                    shadeClose: true, // 点击遮罩关闭层
+                    area: ['1050px', '550px'],
+                    content: 'specs.html' // iframe的url
+                });
+                sessionStorage.setItem("specd_manage_id", data.id);
+            }
+            else if (layEvent === 'comment_manage') {
+                layer.open({
+                    type: 2,
+                    title: '评论管理',
+                    maxmin: true,
+                    shadeClose: true, // 点击遮罩关闭层
+                    area: ['1150px', '550px'],
+                    content: 'productcomment.html' // iframe的url
+                });
+                sessionStorage.setItem("comment_manage_id", data.id);
+            }
+        });
+        //监听推荐商品操作
+        form.on('switch(isClose)', function (obj) {
+            var formData = new FormData();
+            formData.append("id", this.value);
+            formData.append("isSuggest", obj.elem.checked == true ? "0" : "1");
+            $.ajax({
+                cache: true,
+                type: "post",
+                url: getRequestIp() + "saveProduct",
+                data: formData,
+                async: true,
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                error: function (request) {
+                    layer.msg('服务器错误', {
+                        icon: 2
+                    });
+                },
+                success: function (data) {
+                    if (data.code == 0) {
+                        layer.msg('' + data.msg + '', {
+                            icon: 1
+                        });
+                    }
+                    else {
+                        layer.msg('' + data.msg + '', {
+                            icon: 2
+                        });
+                    }
+                }
+            });
+        });
+        //监听管理员下架操作
+        form.on('checkbox(status)', function (obj) {
+            var formData = new FormData();
+            formData.append("id", this.value);
+            formData.append("status", obj.elem.checked == true ? "0" : "1");
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url: getRequestIp() + "saveStatus",
+                data: formData,
+                async: true,
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                error: function () {
+                    layer.msg('服务器错误', {
+                        icon: 2
+                    });
+                },
+                success: function (data) {
+                    if (data.code == 0) {
+                        layer.msg('' + data.msg + '', {
+                            icon: 1
+                        });
+                    }
+                    else if (data.code == 501) {
+                        layer.msg('' + data.msg + '', {
+                            icon: 4
+                        });
+                    }
+                    else {
+                        layer.msg('' + data.msg + '', {
+                            icon: 2
+                        });
+                    }
+                }
+            });
+        });
+    });
+    //执行重载
+    $("#search_class").click(function () {
+        layui.use('table', function () {
+            var table = layui.table;
+            var demoReload = $('#demoReload').val();
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                },
+                where: {
+                    way: $("#classify").val(),
+                    search: demoReload
+                }
+            });
+        });
+    });
+    //增加商品
+    $("#add_product").click(function () {
+        layer.open({
+            type: 2,
+            title: '添加商品',
+            maxmin: true,
+            shadeClose: true, // 点击遮罩关闭层
+            area: ['1150px', '800px'],
+            content: 'addproduct.html' // iframe的url
+        });
+    });
+
+    //图片放大
+    function mouseoverzz(img) {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: '450px',
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: "<img src=" + img + " width=450 height=350>"
+        });
+    }
+</script>
+</body>
+</html>

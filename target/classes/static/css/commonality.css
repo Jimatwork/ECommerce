@@ -1,0 +1,77 @@
+body,
+i,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+img,
+ol,
+dl,
+dd,
+dt,
+p,
+input,
+a,
+header,
+article,
+footer {
+    width: 100%;
+	-moz-box-sizing: border-box;
+	/* Firefox */
+	-webkit-box-sizing: border-box;
+	/* Safari */
+	box-sizing: border-box;
+	display: block;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 626081 */
+  src: url('//at.alicdn.com/t/font_626081_zy33405x4njc3di.eot');
+  src: url('//at.alicdn.com/t/font_626081_zy33405x4njc3di.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_626081_zy33405x4njc3di.woff') format('woff'),
+  url('//at.alicdn.com/t/font_626081_zy33405x4njc3di.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_626081_zy33405x4njc3di.svg#iconfont') format('svg');
+}
+
+body{
+    clear: #fff;
+	height: 100%;
+	/*font-family: 'iconfont',Helvetica;*/
+   font-family: "Helvetica Neue", Helvetica;
+}
+
+#bg{
+    background: #fff !important;
+}
+
+ul{
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.float_lefts {
+	float: left;
+}
+
+.clears {
+	clear: both;
+}
+
+header ul{
+    width: 100%;
+	height: 2.76em;
+	overflow: hidden;
+	background: #6db8f2;
+	position: relative;
+}

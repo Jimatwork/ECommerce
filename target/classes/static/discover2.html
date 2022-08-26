@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html
+	class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://pv.sohu.com/cityjson"></script>
+    <script>
+    		var returnCitySN = returnCitySN.cid*1;
+			var href = window.location.href;    		
+	    	href = href.split('/discover2'); 	
+			if(typeof returnCitySN == "number" && !isNaN(returnCitySN)){
+				if(href[0].indexOf("app.kuedit.com") > -1){
+					window.location.href = "https://app.issop.cn//discover2" + href[1];
+				}
+			}else{
+				if(href[0].indexOf("app.issop.cn") > -1){
+					window.location.href = "https://app.kuedit.com//discover2" + href[1];
+				}
+			};
+	</script>
+<link rel="stylesheet" href="form/font-awesome.min.css">
+<link rel="stylesheet" href="appCanCss/ui-box.css">
+<link rel="stylesheet" href="appCanCss/ui-base.css">
+<link rel="stylesheet" href="appCanCss/ui-color.css">
+<link rel="stylesheet" href="appCanCss/appcan.icon.css">
+<link rel="stylesheet" href="appCanCss/appcan.control.css">
+<link rel="stylesheet" href="appCanCss/audio.css">
+<link rel="stylesheet" href="css/commonality.css" />
+<link rel="stylesheet" href="css/discover2.css" />
+<link rel="stylesheet" href="news_articlecommon/css/news_articlecommon.css" />
+<link rel="stylesheet" href="ImgSkin/demo.css">
+<link rel="stylesheet" href="ImgSkin/iconfont.css">
+<link rel="stylesheet prefetch" href="ImgSkin/photoswipe.css">
+<link rel="stylesheet prefetch" href="ImgSkin/default-skin.css">
+</head>
+<body class="" ontouchstart>
+	<div id="doing">
+		<img src="img/163e829f453dde5639c7e442c5f49993.gif" />
+	</div>
+	<div class="bc-bg" tabindex="0" data-control="PAGE" id="Page">
+		<div>
+			<ul class="wai_header">
+				<li style="width: 20%;margin-right: 5%;"><img
+					class="wai_header_img" src="" /></li>
+				<li style="width: 55%;">
+					<h3 class="wai_header_h3" style="text-align: center;"></h3>
+				</li>
+				<!--<li style="width: 25%;" onclick="downloadApp()"><span
+					style="font-size: 1.4em;width: 20%;text-align: right;padding-top: 0.45em;"
+					class="fa fa-home"></span> <span
+					style="width: 80%;text-align: right;">下载app</span></li>-->
+				<li style="width: 20%;"><a style="color:#FFF;text-align: center;" href="https://www.etmeeting.cn/4app/download/kuedit">下载app</a></li>
+			</ul>
+		</div>
+
+		<div class="tts">
+			<div id="tts_btn" class="audio-wp audio-wp-2"
+				style="display: inline-block;">
+				<img id="tts_img_btn" src="img/audio_4.png"
+					style="float: left; width: 2.2em"></img> <span class="desc">读文章</span>
+			</div>
+		</div>
+
+		<div id="tts_div"></div>
+		<div id="advertisings" class="advertising">
+			<div id="back_mp3_div"
+				style="width: 95%;position: absolute;bottom: 20px;display: none">
+				<img id="music_btn" src="img/addmp3.png" title=""
+					onclick="mp3IconRotate()" style="float: right; width: 2.2em">
+				<!--背景音乐-->
+				<audio id="mp3_audio">
+					<source id="mp3_source" type="audio/mpeg">
+				</audio>
+				</img>
+			</div>
+			<!-- 上广告 -->
+		</div>
+		<article>
+			<h3 id="biaoti"></h3>
+			<div class="lianjies">
+                    		<p class="faxias"></p>
+                    		<p class="yuedu"></p>
+               		</div>
+			<h4>
+				<span>摘要</span><span class="zhaiyao"></span>
+			</h4>
+			<div class="presentation">
+				<!-- html -->
+			</div>
+			<ul class="product-name">
+				<li class="float_lefts mingzi"><span class="mingzis"></span> <span
+					class="datan"></span></li>
+				<li class="float_lefts"><span class="fa fa-thumbs-up comments"></span>
+					<span class="datans"></span></li>
+			</ul>
+		</article>
+		<div id="advertising" class="advertising">
+			<!-- 下广告 -->
+		</div>
+		<div id="" style="overflow: hidden">
+			<div class="tkuang">
+				<span>文章推荐</span>
+			</div>
+			<ul id="recommend" class="advert">
+				<!-- 文章推荐 -->
+			</ul>
+		</div>
+
+		<div class="tkuang">
+			<span>评论展示</span>
+		</div>
+		<div id="comment" style="overflow: hidden;">
+			<!--评论展示-->
+		</div>
+		<div id="nothing">已显示全部内容</div>
+		<div style="height: 2.8em;"></div>
+		<div class="uf sc-bg ubt sc-border-tab ub" data-control="FOOTER"
+			id="Footer">
+			<div class="ub-f1 ub ub-ac umar-a uinn3 uc-a1" id="Box_footer">
+				写评论</div>
+			<div
+				onclick="javascript:document.getElementById('comment').scrollIntoView()"
+				class="ub ub-ac ub-pc share1" data-control="ICON" id="Icon_footer0">
+				<div class="fa fa-comment-o fontzises" data-control-icon=""></div>
+				<p class="xiaobiao"></p>
+			</div>
+			<div style="width: 1em;"></div>
+		</div>
+
+		<div class="utra" data-control="MASK" id="Mask"></div>
+
+		<div class="uhide" data-control="FOOTER" id="Box_footer_maskout">
+			<div class="ub ub-ver ub-fh bc-bg"
+				style="bottom: 0;left: 0;position: absolute;">
+				<div class="ub ub-ac c-wh">
+					<div class="umw3 ub ub-ac ub-pc uinn"
+						ontouchstart="appcan.touch('')" onclick="closepop()">
+						<div class="ub-img quxiao umw1 umh1">取消</div>
+					</div>
+					<div class=" tx-c t-bla ub-f1 ulev-app1"></div>
+					<div class="umw3 ub ub-ac ub-pc uinn"
+						ontouchstart="appcan.touch('')">
+						<div class="ub-img queding  umw1 umh1">发布</div>
+					</div>
+				</div>
+
+				<div class="uba bc-border uinput ub ub-f1">
+					<textarea class="ub ub-f1 articlecommon_as" id="articlecommon_a"></textarea>
+
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div class="utra" data-control="MASK" id="Masks"></div>
+			<div class="uf sc-bg ubt sc-border-tab ub-ver ub-pc ub-ac uhide"
+				data-control="FOOTER" id="Footer_mask">
+				<ul class="share_ul_top">
+					<li>分享到</li>
+				</ul>
+				<ul class="share_ul">
+					<li onclick="shareWeixing(0)"><img src="img/weixing1.png">
+						<p>微信</p></li>
+					<li onclick="shareWeixing(1)"><img src="img/weixing2.png">
+						<p>朋友圈</p></li>
+					<li onclick="facebook()"><img style="padding: .29em;" src="img/facebook.png">
+                            			<p>
+                                			facebook
+                            			</p>
+                        		</li>
+                        		<li onclick="facebook()"><img src="img/weibo.png">
+                            			<p>
+                                                        微博
+                            			</p>
+                        		</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Root element of PhotoSwipe. Must have class pswp. -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"
+		style="">
+		<!-- Background of PhotoSwipe.
+            It's a separate element as animating opacity is faster than rgba(). -->
+		<div class="pswp__bg" style=""></div>
+		<!-- Slides wrapper with overflow:hidden. -->
+		<div class="pswp__scroll-wrap">
+			<!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+			<div class="pswp__container"
+				style="transform: translate3d(0px, 0px, 0px);">
+				<div class="pswp__item"
+					style="display: block; transform: translate3d(-464px, 0px, 0px);">
+					<div class="pswp__zoom-wrap"
+						style="transform: translate3d(0px, 161px, 0px) scale(1);">
+						<img class="pswp__img" src="./ImgSkin/y1.jpeg"
+							style="opacity: 1; width: 414px; height: 414px;">
+					</div>
+				</div>
+				<div class="pswp__item"
+					style="transform: translate3d(0px, 0px, 0px);">
+					<div class="pswp__zoom-wrap"
+						style="transform: translate3d(79.0938px, 361px, 0px) scale(0.285741);">
+						<img class="pswp__img pswp__img--placeholder"
+							src="./ImgSkin/s5.jpg"
+							style="width: 414px; height: 318px; display: none;"><img
+							class="pswp__img" src="./ImgSkin/s5.jpg"
+							style="display: block; width: 414px; height: 318px;">
+					</div>
+				</div>
+				<div class="pswp__item"
+					style="display: block; transform: translate3d(464px, 0px, 0px);">
+					<div class="pswp__zoom-wrap"
+						style="transform: translate3d(0px, 230px, 0px) scale(1);">
+						<img class="pswp__img" src="./ImgSkin/sb1.jpg"
+							style="opacity: 1; width: 414px; height: 276px;">
+					</div>
+				</div>
+			</div>
+			<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+			<div class="pswp__ui pswp__ui--hidden">
+
+				<div class="pswp__top-bar">
+
+					<!--  Controls are self-explanatory. Order can be changed. -->
+
+					<div class="pswp__counter">1 / 5</div>
+
+					<button class="pswp__button pswp__button--close"
+						title="Close (Esc)"></button>
+
+					<!-- element will get class pswp__preloader--active when preloader is running -->
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+
+				<button class="pswp__button pswp__button--arrow--left"
+					title="Previous (arrow left)"></button>
+
+				<button class="pswp__button pswp__button--arrow--right"
+					title="Next (arrow right)"></button>
+
+				<div class="pswp__caption">
+					<div class="pswp__caption__center">图片描述</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</body>
+<script src="js/common.js"></script>
+<script src="js/appcan.js"></script>
+<script src="js/appcan.control.js"></script>
+<script src="js/jquery-2.1.0.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/discover2.js"></script>
+
+<script src="ImgSkin/photoswipe.js"></script>
+<script src="ImgSkin/photoswipe-ui-default.min.js"></script>
+<script src="ImgSkin/imgskin.js"></script>
+</html>

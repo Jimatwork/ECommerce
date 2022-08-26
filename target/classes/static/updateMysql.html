@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/requestip.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+
+	<body>
+		<div>修改数据的工具页面</div>
+		<div id="ttt" style="display: none;"></div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//			var regx = /\d+/;
+//			var regx = /[\u4e00-\u9fa5_a-zA-Z0-9\.\,\，\。]+/;
+//			alert(regx.test("。"));
+
+			var num;
+			var item;
+			var s = '<p id="initContent"><span id="_baidu_bookmark_start_0" style="display: none; line-height: 0px;">‍</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>';
+
+			$('#ttt').html(s)
+			num = $('#ttt').html();
+			item = $('#ttt').text();
+			var reg1 = /[\u4e00-\u9fa5_0-9\.\,\，\。]+/; //汉字数字标点符号
+//			var reg2 = new RegExp("^[\u4e00-\u9fa5]{0,}$"); //汉字
+//			var reg3 = new RegExp("^[/[a-z]/i$"); //字母
+			//			var regu = "^[ ]+$";
+			//			var re = new RegExp(regu);
+			console.log(!reg1.test(item));
+//			console.log(reg2.test(item));
+//			console.log(reg3.test("aaaa"));
+			console.log('------------------------------');
+			console.log(item);
+			var cars = new Array();
+			cars = item.split(';');
+			for(var i = 0; i < cars.length; i++) {
+				console.log(cars[i] + '==');
+			}
+			console.log('------------------------------');
+			console.log(typeof item);
+			console.log(num.indexOf("src"));
+			if(item == '') {
+				console.log('进来了为空字符');
+			}
+			if(item == null) {
+				console.log('进来了为空');
+			}
+			if(item == '' && num.indexOf("src") == -1) {
+				console.log('进来了');
+			}
+
+			//			$.ajax({
+			//				type: "post",
+			//				url: getRequestIp() + "findConAll",
+			//				data: {},
+			//				dataType: "json",
+			//				async: true,
+			//				success: function(data) {
+			//					var num;
+			//					var item;
+			//					var a = '';
+			//					$.each(data.list, function(i, result) {
+			//						$('#ttt').html(result.conHtml)
+			//						num = $('#ttt').html();
+			//						item = $('#ttt').text();
+			//						if(item == '' && num.indexOf("src") == -1) {
+			//							a += result.id + ',';
+			//						}
+			//					});
+			//					a = a.substring(0, a.lastIndexOf(','));
+			//					console.log(a);
+			//					$.ajax({
+			//						type: "post",
+			//						url: "http://192.168.10.108:8888/updateMysql",
+			//						data: {
+			//							'a':a
+			//						},
+			//						dataType: "json",
+			//						async: true,
+			//						success: function(datas) {
+			//							console.log(datas.success);
+			//						}
+			//					});
+			//				}
+			//
+			//			});
+		});
+	</script>
+
+</html>

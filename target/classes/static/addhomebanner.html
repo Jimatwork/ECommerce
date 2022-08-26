@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/animate.css"/>
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bootstrap/css/style.css"/>
+    <link rel="stylesheet" href="bootstrap/css/plugins/iCheck/custom.css"/>
+    <link rel="stylesheet" href="bootstrap/css/plugins/cropper/cropper.css"/>
+    <link rel="stylesheet" href="bootstrap/js/plugins/layer/laydate/skins/default/laydate.css"/>
+    <link rel="stylesheet" href="bootstrap/css/gg-bootdo.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="bootstrap/css/plugins/summernote/summernote-0.8.8.css">
+    <link href="bootstrap/css/animate.css" rel="stylesheet">
+    <link href="bootstrap/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="bootstrap/css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/js/select2.css">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">图片：</label>
+                            <div class="col-sm-8">
+                                <div class="ibox-content no-padding">
+                                    <input id="image" class="form-control" type="file" name="image"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">链接地址：</label>
+                            <div class="col-sm-8">
+                                <div class="ibox-content no-padding">
+                                    <input id="linkUrl" class="form-control" type="text" name="linkUrl"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备注：</label>
+                            <div class="col-sm-8">
+                                <div class="ibox-content no-padding">
+                                    <input id="remark" class="form-control" type="text" name="remark"
+                                           autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="button" class="btn btn-primary" id="submit">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/plugins/cropper/cropper.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/plugins/layer/laydate/laydate.js"></script>
+<script type="text/javascript" src="bootstrap/js/plugins/distpicker/distpicker.data.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/plugins/distpicker/distpicker.min.js"></script>
+<!--校验插件-->
+<script src="bootstrap/js/plugins/validate/jquery.validate.min.js"></script>
+<script src="bootstrap/js/plugins/validate/jquery.validate.extend.js"></script>
+<script src="bootstrap/js/plugins/validate/messages_zh.min.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/requestip.js"></script>
+<script>
+    //增加banner
+    $("#submit").click(function () {
+        var formData = new FormData();
+        formData.append("image", $('#image')[0].files[0]);
+        formData.append("linkUrl", $("#linkUrl").val());
+        formData.append("remark", $("#remark").val());
+        formData.append("type", 2);
+        $.ajax({
+            type: "POST",
+            url: getRequestIp() + "addBannerService",
+            dataType: "json",
+            data: formData,
+            processData: false,
+            contentType: false,
+            error: function (request) {
+                layer.msg('服务器错误', {
+                    icon: 2
+                });
+            },
+            success: function (data) {
+                if (data.code == 0) {
+                    parent.layer.msg('' + data.msg + '', {
+                        icon: 1
+                    });
+                    parent.layui.table.reload('testReload');
+                    var index = parent.layer.getFrameIndex(window.name); // 获取窗口索引
+                    parent.layer.close(index);
+                }
+                else if (data.code == 500) {
+                    parent.layer.msg('' + data.msg + '', {
+                        icon: 2
+                    });
+                }
+                else if (data.code == 501) {
+                    parent.layer.msg('' + data.msg + '', {
+                        icon: 7
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

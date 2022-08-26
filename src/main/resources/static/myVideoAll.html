@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="generator" content="" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		<link rel="stylesheet" href="css/css.css" />
+		<link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
+		<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/pageNav.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.4.css">
+		<link href="dist/summernote.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/firstPage.css" />
+		<link rel="stylesheet" href="css/find.css" />
+		<link rel="stylesheet" href="js/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="js/webuploader/webuploader.css" />
+		
+		<style type="text/css">
+			.modal-backdrop {
+				z-index: 9;
+			}
+		</style>
+		<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+	</head>
+
+	<body>
+		<div class="banDel" style="z-index: 100;">
+			<div class="delete" style="width: 200px;height: 50px;">
+				<p class="delP1"><img src="images/timg.gif" style="width: 50px;height: 50px;" />请稍候</p>
+
+			</div>
+		</div>
+		<!-- MainForm -->
+		<div id="MainForm">
+			<div class="form_boxA">
+				<h2>	
+					<div class="filter-box">
+						<button type="button" id="add_button1" class="buttons"
+						onclick="ShowDiv1()">新增内容</button>
+						<span><input class="ins" type="text" placeholder="请输入要搜索的内容标题"/>
+							<button type="button" class="buttons" id="button3">搜索</button>
+						</span>
+					</div>
+				</h2>
+				<table class="table" cellpadding="0" cellspacing="0">
+					<tr>
+						<th>序号</th>
+						<th>标题</th>
+						<th>摘要</th>
+						<th>缩略图</th>
+						<th>发布时间</th>
+						<th>作者名</th>
+						<th>点攒数</th>
+						<th>阅读数</th>
+						<th>评论数</th>
+						<th>操作</th>
+					</tr>
+				</table>
+				<p class="msg"></p>
+			</div>
+			<!--顶部滚动图片-->
+			<div id="top_img">
+
+				<div class="form_boxA" id="bandel_del">
+					<div style="text-align: right; cursor: default; height: 30px;">
+						<span onclick="CloseDiv('top_img')"><img src="img/shanchu.png"/></span>
+					</div>
+					<table class="table1" cellpadding="0" cellspacing="0">
+						<tr>
+							<th>序号</th>
+							<th style="width: 150px;">标题</th>
+							<th style="width: 150px;">摘要</th>
+							<th>缩略图</th>
+							<th>发布时间</th>
+							<th>作者名</th>
+							<th>点攒数</th>
+							<th>阅读数</th>
+							<th>评论数</th>
+							<th>操作</th>
+						</tr>
+					</table>
+					<p class="msg"></p>
+				</div>
+			</div>
+			<!--评论-->
+			<div id="comment">
+				<div class="form_boxA" id="bandel_pl">
+					<div class="top_lm">
+						<span class="lm_gen">评论管理</span>
+						<span onclick="CloseDiv('comment')" class="sc_gen"><img
+					src="img/shanchu.png" /></span>
+					</div>
+					<table class="table3" cellpadding="0" cellspacing="0">
+						<tr class="trr">
+							<th>序号</th>
+							<th>内容</th>
+							<th>评论时间</th>
+							<th>IP地址</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+					</table>
+					<div id="page" class="page_div"></div>
+				</div>
+			</div>
+			<!--新闻修改内容-->
+			<div id="save_news">
+				<div class="form_boxA" id="addDiv">
+					<div class="top_lm">
+						<span class="lm_gen">添加/修改</span>
+						<span onclick="CloseDiv('save_news')" class="sc_gen"><img src="img/shanchu.png" /></span>
+					</div>
+					<div id="Popup">
+
+						<!-- SubPopup -->
+						<div id="SubPopup">
+							<script type="text/javascript">
+							</script>
+							<div class="form_boxC">
+								<table cellpadding="0" cellspacing="0">
+									<tr>
+										<th width="100">标题 <span class="f_cB">:</span></th>
+										<td>
+											<div><input id="intitle" class="txtbox floatL" style="width:400px;" name="" type="text" size="5"></div>
+										</td>
+									</tr>
+									<tr>
+										<th>摘要 <span class="f_cB">:</span></th>
+										<td>
+											<div><input id="inconRemark" class="txtbox floatL" style="width:400px;" name="" type="text" size="5"></div>
+										</td>
+									</tr>
+									<tr>
+										<th class="web_up">封面<span class="f_cB">:</span></th>
+										<td class="web_up">
+											<center>
+												<h1 id="mytitle" style="display: none;"></h1>
+
+												<div id="uploader" class="wu-example">
+													<!--用来存放文件信息-->
+
+													<div id="thelist" class="uploader-list"></div>
+
+													<div id="jindutiao" class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="demo1" style="width: 300px;height: 24px;">
+														<div style="height: 24px;" class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+													</div>
+
+													<div class="btns">
+														<div id="picker" class="tttt">选择文件</div>
+														<!--<button id="ctlBtn" class="btn btn-default">开始上传</button>-->
+													</div>
+												</div>
+											</center>
+									</tr>
+									<tr style="display: none;">
+										<th class="web_up">视频 <span class="f_cB">:</span></th>
+										<td class="web_up">
+											<center>
+												<h1 id="video_mytitle" style="display: none;"></h1>
+												<h1 id="img_mytitle" style="display: none;"></h1>
+												<div id="video_uploader" class="wu-example">
+													<!--用来存放文件信息-->
+
+													<div id="video_thelist" class="uploader-list"></div>
+
+													<div id="video_jindutiao" class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="video_demo" style="width: 300px;height: 24px;">
+														<div style="height: 24px;" class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+													</div>
+
+													<div class="btns">
+														<div id="video_picker" class="ttt">选择文件</div>
+														<!--<button id="ctlBtn" class="btn btn-default">开始上传</button>-->
+													</div>
+												</div>
+											</center>
+										</td>
+									</tr>
+									<tr>
+										<th>栏目 <span class="f_cB">:</span></th>
+										<td>
+											<!-- selectbox -->
+											<div>
+												<select name="sel" class="selectbox" id="sel1" style="width: 400px;">
+												</select>
+											</div>
+											<!-- /selectbox -->
+										</td>
+									</tr>
+								</table>
+								<div class="m">
+									<div class="summernote"></div>
+								</div>
+							</div>
+						</div>
+						<!-- SubPopup -->
+
+						<div id="BtmBtn">
+							<div class="btn_boxB floatR mag_l20"><input name="" type="button" value="取消" onclick="CloseDiv('save_news')"></div>
+							<div class="btn_box floatR"><input id="asd" name="" type="button" value="提交"></div>
+							<div class="btn_box floatR"><input class="bu_ag" id="cg" name="" type="button" value="存稿"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--推送-->
+			<div id="push">
+				<div class="form_boxA" id="push_Div" style="width: 620px; height: 320px;">
+					<div style="text-align: right; cursor: default; height: 30px;">
+						<span onclick="CloseDiv('push')"><img src="img/shanchu.png"/></span>
+					</div>
+					<form id="form0">
+						<div id="Po_pup">
+							<!-- SubPopup -->
+							<div id="Sub_Popup">
+								<div class="form_boxC">
+									<table cellpadding="0" cellspacing="0">
+										<tr>
+											<th width="100">标题 <span class="f_cB">:</span></th>
+											<td>
+												<div><input id="in_title" class="txtbox floatL" style="width:400px;" name="conTitle" type="text" size="5"></div>
+											</td>
+										</tr>
+										<tr>
+											<th>封面 <span class="f_cB">:</span></th>
+											<td>
+												<div id="dd_div">
+													<input id="in_file" name="myUpload" type="file" size="5" value="上传文件...">
+													<!--id--><input id="in_colid" name="id" type="hidden" />
+													<!--缩略图--><input id="in_imgUrl" name="imgUrl" type="hidden" />
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>栏目 <span class="f_cB">:</span></th>
+											<td>
+												<!-- selectbox -->
+												<div>
+													<select name="colId" class="selectbox" id="sele0" style="width: 400px;">
+														<option value=""></option>
+													</select>
+												</div>
+												<!-- /selectbox -->
+											</td>
+										</tr>
+										<!--<tr>
+										<th>级别 <span class="f_cB">:</span></th>
+										<td>
+											<div>
+												<select name="ext-comp-1123" class="selectbox" id="sele01">
+													<option value="" selected="selected">暂未使用..</option>
+												</select>
+											</div>
+										</td>
+									</tr>-->
+										<tr>
+											<th>摘要 <span class="f_cB">:</span></th>
+											<td>
+												<div>
+													<textarea id="in_conRemark" class="txtbox floatL" name="conRemark" rows="4" cols="" size="5" style="width:400px;"></textarea>
+											</td>
+										</tr>
+									</table>
+									</div>
+								</div>
+								<!-- SubPopup -->
+
+								<div id="Btm_Btn">
+									<div class="btn_boxB floatR mag_l20"><input id="push_qx" name="" type="button" value="取消"></div>
+									<div class="btn_box floatR"><input id="push_asd" name="" type="button" value="提交"></div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--添加直播-->
+			<div id="add_zb">
+				<div class="form_boxA" id="addDiv3">
+					<div class="top_lm">
+						<span class="lm_gen">添加/修改</span>
+						<span onclick="CloseDiv('add_zb')" class="sc_gen"><img
+					src="img/shanchu.png" /></span>
+					</div>
+					<div id="Popup1">
+
+						<!-- SubPopup -->
+						<div id="SubPopup1">
+							<div class="form_boxC">
+								<table cellpadding="0" cellspacing="0">
+									<tr>
+										<th width="100">标题 <span class="f_cB">:</span></th>
+										<td>
+											<div><input id="intitle3" class="txtbox floatL" style="width:400px;" name="" type="text" size="5"></div>
+										</td>
+									</tr>
+									<tr>
+										<th>摘要 <span class="f_cB">:</span></th>
+										<td>
+											<div><input id="inconRemark3" class="txtbox floatL" style="width:400px;" name="" type="text" size="5"></div>
+										</td>
+									</tr>
+									<tr>
+										<th class="web_up">封面 <span class="f_cB">:</span></th>
+										<td class="web_up">
+											<center>
+												<h1 id="mytitle1" style="display: none;"></h1>
+
+												<div id="uploader1" class="wu-example">
+													<!--用来存放文件信息-->
+
+													<div id="thelist1" class="uploader-list"></div>
+
+													<div id="jindutiao1" class="layui-progress layui-progress-big" lay-showpercent="true" lay-filter="demo1" style="width: 300px;height: 24px;">
+														<div style="height: 24px;" class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+													</div>
+
+													<div class="btns">
+														<div id="picker1" class="tttt">选择文件</div>
+														<!--<button id="ctlBtn" class="btn btn-default">开始上传</button>-->
+													</div>
+												</div>
+											</center>
+										</td>
+									</tr>
+									<tr>
+										<th>栏目 <span class="f_cB">:</span></th>
+										<td>
+											<!-- selectbox -->
+											<div>
+												<select name="sel" class="selectbox" id="sel3" style="width: 400px;">
+													<option value=""></option>
+												</select>
+											</div>
+											<!-- /selectbox -->
+										</td>
+									</tr>
+									<tr>
+										<th>直播地址 <span class="f_cB">:</span></th>
+										<td>
+											<div><input id="Sinatv" class="txtbox floatL" style="width:400px;" name="" type="text" size="5"></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!-- SubPopup -->
+
+						<div id="BtmBtn1">
+							<div class="btn_boxB floatR mag_l20"><input name="" type="button" value="取消" onclick="CloseDiv('add_zb')"></div>
+							<div class="btn_box floatR"><input id="asd3" name="" type="button" value="提交"></div>
+							<div class="btn_box floatR"><input class="bu_ag" id="zb_cg" name="" type="button" value="存稿"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--添加点播-->
+		</div>
+		<!-- /MainForm -->
+		<nav aria-label="Page navigation" class="page-nav-outer" id="PageNavId"></nav>
+		<!-- /PageNum -->
+		</div>
+		<!-- /Contents -->
+
+		<!-- /footer -->
+		<footer>
+			<address></address>
+		</footer>
+		<!-- /footer -->
+
+		</div>
+		<script type="text/javascript" src="js/requestip.js"></script>
+		<script src="js/pageNav.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap-3.3.4.js"></script>
+		<script src="dist/summernote.js"></script>
+		<script src="dist/lang/summernote-zh-CN.js"></script>
+		<script src="js/webuploader/webuploader.js"></script>
+		<script src="js/layui/layui.js" charset="utf-8"></script>
+		<!--<script src="js/jquery-1.10.1.min.js"></script>-->
+		<script src="js/side.js" type="text/javascript"></script>
+		<script src="js/myVideoAll.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/public-a.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+
+		<script type="text/javascript" src="js/paging.js"></script>
+		<script src="js/webuploader/upload.js" type="text/javascript"></script>
+	<script src="js/webuploader/video_upload.js" type="text/javascript"></script>
+	</body>
+	
+	<!--<script src="js/webuploader/upload1.js" type="text/javascript"></script>
+	<script src="js/webuploader/upload2.js" type="text/javascript"></script>
+	<script src="js/webuploader/upload_db1.js" type="text/javascript"></script>
+	<script src="js/webuploader/upload_db2.js" type="text/javascript"></script>-->
+
+</html>

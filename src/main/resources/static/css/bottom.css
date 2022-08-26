@@ -1,0 +1,16 @@
+.shou-bottom {
+	text-align: center;
+	background-color: #f2f2f2;
+	line-height: 35px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.shou-bottom>div {
+	width: 50%;
+}
+
+.shou-bottom>div>span {
+	font-size: 12px;
+}

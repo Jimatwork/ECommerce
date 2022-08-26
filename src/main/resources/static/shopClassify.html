@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>管理员管理</title>
+		<link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<script src="layui/layui.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/requestip.js"></script>
+		<script type="text/javascript" src="js/shopClassify.js"></script>
+		<style type="text/css">
+			.layui-table-cell {
+				height: 45px;
+				line-height: 45px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="banDel" style="z-index: 100;">
+			<div class="delete" style="width: 200px;height: 50px;">
+				<p class="delP1"><img src="images/timg.gif" style="width: 50px;height: 50px;" />请稍候</p>
+
+			</div>
+		</div>
+		<div id="pageAll" style="height: 840px;">
+			<div class="pageTop">
+				<div class="page">
+					<div style="margin-top: 5px">
+
+						<button class="btn btn-primary" id="search_order">添加分类</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="page">
+				<!-- user页面样式 -->
+				<div class="connoisseur">
+					<table class="layui-hide" id="test" lay-filter="demo"></table>
+				</div>
+				<!-- user页面样式end -->
+			</div>
+			<script type="text/html" id="barDemo">
+				<a class="layui-btn layui-btn-xs" lay-event="detail">子分类</a>
+				<a class="layui-btn layui-btn-xs" lay-event="scf_update">修改</a>
+				<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+			</script>
+			<!-- 传值的输入框-->
+			<div>
+				<input type="hidden" class="by_value1" /> <input type="hidden" class="by_value2" />
+			</div>
+		</div>
+
+		<div id="alert_div" class="wrapper wrapper-content " style="width:97%;display: none;">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content"><br/>
+							<form class="form-horizontal m-t" id="signupForm">
+								<input id="id" name="id" type="hidden">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">分类名称：</label>
+									<div class="col-sm-8">
+										<input id="name" name="name" class="form-control" type="text" autocomplete="off">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">分类状态：</label>
+									<div class="col-sm-8">
+										<label class="radio-inline">
+		<input type="radio" name="state" value="0" checked="checked"/> 显示
+		</label>
+										<label class="radio-inline">
+		<input type="radio" name="state" value="1"/> 隐藏
+		</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">显示顺序：</label>
+									<div class="col-sm-8">
+										<input id="sequence" name="sequence" class="form-control" type="text">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">分类图标：</label>
+									<div class="col-sm-8">
+										<input type="file" class="form-control" id="img">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-3">
+										<button type="button" class="btn btn-primary" id="submit">提交</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+
+</html>

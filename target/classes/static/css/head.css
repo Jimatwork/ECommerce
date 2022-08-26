@@ -1,0 +1,98 @@
+.headL, .head {
+	position: relative;
+}
+
+.headLogo {
+	position: absolute;
+	width: 160px;
+	height: 60px;
+	left: 40px;
+}
+
+.head {
+	background-image: url(images/bgg.png);
+	background-size: 100% 100%;
+}
+
+.headR_bo {
+	position: absolute;
+	right: 270px;
+	top: 60px;
+	background-color: #BCE8F1;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.headR_imgsys {
+	position: absolute;
+	bottom: 8px;
+	left: 6px;
+}
+
+.headR_s {
+	position: absolute;
+	bottom: 6px;
+	right: 6px;
+	color: #036CB4;
+}
+
+.headR_up {
+	position: absolute;
+	right: 150px;
+	top: 60px;
+	background-color: #BCE8F1;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.headR_imgup {
+	position: absolute;
+	bottom: 8px;
+	left: 12px;
+}
+
+.headR_uppwd {
+	position: absolute;
+	bottom: 6px;
+	right: 14px;
+	color: #036CB4;
+}
+
+.headR_quit {
+	position: absolute;
+	right: 30px;
+	top: 60px;
+	background-color: #BCE8F1;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.headR_imgquit {
+	position: absolute;
+	bottom: 8px;
+	left: 12px;
+}
+
+.headR_qu {
+	position: absolute;
+	bottom: 6px;
+	right: 14px;
+	color: #036CB4;
+}
+
+.headR_quit, .headR_up, .headR_bo {
+	cursor: pointer;
+}
+
+.headR {
+	position: relative;
+}
+
+.headR .headR_div {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}

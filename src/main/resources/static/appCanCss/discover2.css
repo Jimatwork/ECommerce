@@ -1,0 +1,270 @@
+
+article .slideshow{
+    width: 100%;
+    height: 9.6em;
+}
+
+.product-name{
+    overflow: hidden;
+    background: #fff;
+}
+
+.product-name li{
+    text-align: center;
+    margin: 0.6em 0;
+    color: #939393;
+    font-size: 1em;
+    border-right: 0.06em solid #e4e2e2;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.product-name li:nth-child(1){
+    width: 50%;
+}
+
+.product-name li:nth-child(1) span{
+    display: block;
+    text-align: center;
+    float: left;
+}
+
+.ming{
+    width: 40%;
+}
+
+.mingzis2{
+    background: #00f;
+    border-radius: .52em;
+    color: #fff;
+    float: right;
+    width: 3.8em;
+}
+
+.mingzis{
+    box-sizing: border-box;
+    border-left: .2em solid #fff;
+    border-right: .2em solid #fff;
+    width: 60%;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.product-name li:nth-child(2){
+    width: 25%;
+}
+
+.product-name li:nth-child(3){
+    width: 25%;
+    border: 0;
+}
+
+h4{
+    padding: .6em 1.2em;
+    color: #606060;
+    background: #f2f2f2;
+    letter-spacing: 0.06em;
+}
+
+h4 span:nth-child(1){
+    margin-right: 0.48em;
+    color: #fff;
+    line-height: 1.8em;
+    background: #6db8f2;
+    border-radius: 0.18em;
+    padding: 0 0.3em;
+}
+
+.presentation{
+    padding: 0.6em 1.2em;
+    color: #939393;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer ul{
+    overflow: hidden;
+    background: #e9e9e9;
+    padding: 0 0.6em;
+}
+
+footer ul li{
+    height: 2.4em;
+    width: 15%;
+    text-align: center;
+}
+
+footer ul li input{
+    width: 90%;
+    line-height: 1.6em !important;
+    font-size: 1em;
+    border-radius: 0.8em;
+    margin: 0.4em auto;
+    border: 0.06em solid #ccc7c7;
+    text-indent: 0.6em;
+}
+
+footer ul .fabiao *{
+    padding-top: 0.4em; 
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    color: #5e5e5e;
+}
+
+.share1{
+    position: relative;
+}
+
+.xiaobiao{
+    font-size: .7em !important;
+    color: #f00 !important;
+    position: absolute;
+    top: .5em;
+    right: 0;
+    padding-left: 3.5em;
+    height: 1.8em !important;
+    text-align: center;
+}
+
+footer ul li:nth-child(1){
+    width: 55%;
+}
+.bc-head{
+    background: rgba(0,0,0,0);
+    border: 0;
+    color: #fff;
+}
+
+.emphasis{
+    background: #000;
+}
+
+.emphasis li:nth-child(1){
+    max-width: 100%;
+    position: relative;
+}
+
+.emphasis li video{
+    display: none;
+    max-height: 12em;
+    width: 100%;
+    display: blcok;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+#Footer_mask {
+    border-style:none;
+    width:100%;
+    background-color:rgba(255,255,255,1);
+    z-index:1002;
+    bottom: -1px;
+}
+.share_ul_top {
+    border-bottom: 1px solid #bababa;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1.5em;
+}
+
+.share_ul {
+    width: 100%;
+    text-align: center;
+}
+
+.share_ul li {
+    float: left;
+    width: 25%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: -webkit-center;
+}
+.share_ul li img{
+    width: 65%;
+}
+
+.text_color{
+    color: #f00 !important;
+}
+
+.background_color{
+    background-color: #f00 !important;
+}
+.zhaiyao{
+    /*display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;*/
+}
+
+.comments_shows{
+    padding: 0.6em 1.2em;
+}
+
+.comments_user p{
+    float: left;
+}
+
+.comments_user p:nth-child(1){
+    width: 2.5em;
+}
+
+.font_sizes{
+    font-size: .72em;
+    color: #a2a1a1;
+}
+
+.comments_user p:nth-child(2){
+    font-weight: 600;
+    width: 60%;
+    font-size: .84em;
+}
+
+.comments_user p:nth-child(3){
+    width: 20%;
+    float: right;
+}
+
+.comments_user p:nth-child(3) span{
+    float: right;
+    line-height: 1em;
+}
+
+.comments_user p:nth-child(1) img{
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+}
+
+.comments_content{
+    padding-left: 2.5em;
+}
+
+.comments_content p{
+    clear: both;
+}
+
+.comments_content p img{
+  display:block;
+  float:left;
+  height: auto; 
+  width: 8%;
+}
+.comments_content p:nth-child(1){
+    line-height: 1.5em;
+}
+.comment_like{
+    padding-left: 1em;
+}
+
+.comment_color{
+    color: #f00 !important;
+}
+
+

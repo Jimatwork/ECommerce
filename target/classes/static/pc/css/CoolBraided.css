@@ -1,0 +1,316 @@
+body,
+i,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+img,
+ol,
+dl,
+dd,
+dt,
+p,
+input,
+a,
+header,
+article,
+footer {
+	-moz-box-sizing: border-box;
+	/* Firefox */
+	-webkit-box-sizing: border-box;
+	/* Safari */
+	box-sizing: border-box;
+	display: block;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+@font-face {
+	font-family: 'iconfont';
+	/* project id 538013 */
+	src: url('//at.alicdn.com/t/font_538013_u8ymu9f8xw0442t9.eot');
+	src: url('//at.alicdn.com/t/font_538013_u8ymu9f8xw0442t9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_538013_u8ymu9f8xw0442t9.woff') format('woff'), url('//at.alicdn.com/t/font_538013_u8ymu9f8xw0442t9.ttf') format('truetype'), url('//at.alicdn.com/t/font_538013_u8ymu9f8xw0442t9.svg#iconfont') format('svg');
+}
+
+body {
+	font-family: 'iconfont',"微软雅黑";
+}
+
+.float_lefts {
+	float: left;
+}
+
+.clears {
+	clear: both;
+}
+
+header,
+article,
+footer {
+	width: 1000px;
+	margin: auto;
+	overflow: hidden;
+}
+header{
+	width: 100%;
+	height: 86px;
+	background-color: #02328d;
+}
+header ul {
+	margin: auto;
+	width: 1000px;
+}
+
+header ul li {
+	word-spacing:8px;
+	letter-spacing: 8px;
+	text-align: center;
+	float: left;
+	width: 15%;
+	font-size: 30px;
+	line-height: 86px;
+	color: #fff;
+}
+
+header ul li:hover{
+	color: #02328d;
+	background-color: #ffff;
+	cursor: pointer;
+}
+
+.confirm{
+	color: #02328d;
+	background-color: #ffff;
+}
+
+.sheadline {
+	line-height: 40px;
+	border: 5px solid #fff;
+	border-bottom: 3px solid #d9e3e4;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.sheadline span {
+	padding: 0 10px;
+}
+
+/*.sheadline span:nth-child(1) {
+	color: #567ac4;
+}*/
+
+.colIcon{
+	width: 22px;
+	height: 22px;
+	display: inline;
+}
+
+.sheadline span:nth-child(2) {
+	letter-spacing: 5px;
+}
+
+.sheadline span:nth-child(3) {
+	float: right;
+	font-size: 14px;
+	color: #999;
+	padding: 0 20px;
+	cursor: pointer;
+}
+
+.byline {
+	width: 100% !important;
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+/*新闻*/
+
+.journalism_d {
+	width: 47%;
+}
+
+.journalism_rigtg {
+	width: 53%;
+	height: 340px;
+}
+
+.journalism_rigtg div {
+	width: 100%;
+	height: 100%;
+}
+
+.journalism_left li a {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 20px;
+}
+
+.journalism_left li a img {
+	width: 100px;
+	height: 100px;
+	margin-right: 20px;
+}
+
+.journalism_left li a div {
+	width: 70%;
+}
+
+.interaction {
+	overflow: hidden;
+	padding-top: 8px;
+}
+
+.interaction span {
+	float: left;
+	font-size: 14px;
+	padding-right: 10px;
+}
+
+.interaction span:nth-child(1) {
+	color: #347ce2;
+}
+
+.datas p:nth-child(2) {
+	color: #999;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.imgbox{
+	border: 1px solid #ccc;
+}
+
+/*直播*/
+
+.lives {
+	overflow: hidden;
+}
+
+.lives ul li {
+	overflow: hidden;
+	width: 25%;
+	float: left;
+	border-right: 8px solid #fff;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	/* Firefox */
+	-webkit-box-sizing: border-box;
+	/* Safari */
+}
+
+.lives ul li a {
+	height: 200px;
+}
+
+.lives ul li a img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/*点播*/
+
+.dibbler ul li:nth-child(1) {
+	width: 45%;
+	height: 350px;
+	border-right: 20px solid #fff;
+	box-sizing: border-box;
+}
+
+.dibbler ul li:nth-child(2) {
+	width: 55%;
+	height: 350px;
+}
+
+.dibbler ul li:nth-child(1) a {
+	height: 90%;
+	border: 1px solid #ccc;
+}
+
+.dibbler ul li:nth-child(1) a img{
+	width: 100%;
+	height: 100%;
+}
+
+.dibbler ul li:nth-child(2) div {
+	width: 50%;
+	height: 175px;
+	border-right: 10px solid #fff;
+	border-left: 10px solid #fff;
+	box-sizing: border-box;
+}
+
+.dibbler ul li:nth-child(2) a {
+	border: 1px solid #ccc;
+	overflow: hidden;
+	height: 78%;
+}
+
+.dibbler ul li:nth-child(2) a img{
+	width: 100%;
+	height: 100%;
+}
+
+.finished li {
+	float: left;
+	width: 50%;
+	overflow: hidden;
+}
+
+.finished_1 {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.finished_1 img {
+	border-left: 10px solid #fff;
+	border-right: 20px solid #fff;
+	width: 130px;
+	height: 100px;
+}
+
+.finished_1 div {
+	width: 352px;
+}
+
+.finished_datas h4 {
+	line-height: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.finished_datas p:nth-child(2) {
+	color: #999;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.cirbox {
+	top: 315px;
+}
+
+.change{
+	height: 60px;
+	top: 55%;
+}
+.datays{
+	height: 341px;
+}

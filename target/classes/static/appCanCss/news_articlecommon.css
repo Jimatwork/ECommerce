@@ -1,0 +1,91 @@
+
+#Footer {
+	height:3.00em;
+	background-color:rgba(255,255,255,1);
+	border-style:solid;
+	border-color:rgba(213,213,213,1);
+	border-top-width:1px;
+	border-bottom-width:00px;
+	border-right-width:00px;
+	border-left-width:00px;
+	bottom: 0;
+}
+
+#Box_footer {
+    height:1.88em;
+    border:1px solid #bababa;
+}
+#Box_footer_mask{
+    height:5em;
+    width:100%;
+}
+
+.t-bg{
+    color:#434343;
+}
+.ulh-a{
+    line-height:1.4em;
+}
+
+.c-bcom{
+    background-color:#0670b7;
+}
+.shoucang{
+    background-image:url('myImg/shoucang.png');
+    width: 50px;
+    height: 50px;
+}
+.zhuanfa{
+    background-image:url('myImg/zhuanfa.png');
+}
+.quxiao{
+    color: #ccc;
+}
+.queding{
+    color: #3399ff;
+}
+.t-gra
+{
+    color:gray;
+}
+.uc-a1 {
+    -webkit-border-radius: .4em;
+    border-radius: .4em
+}
+.uban
+{
+    border:1px solid #f1f1f1;
+    
+}
+.t-bg{
+    color:#434343;
+}
+.b-blu-00{
+    border-color:#0060a1;
+}
+.uinn-ha1{
+    padding:0.625em 0.3125em;
+}
+.uinn-ha2{
+    padding:0.5em 0.625em;
+}
+#Box_footer_maskout{
+    background-color:#ffffff;
+    min-height:8em;
+    width:100%;
+    z-index:1002;
+    bottom:0 !important;
+}
+
+.uinput textarea{
+    border-radius: 1.5em;
+    border: 1em solid #fff !important;
+    background: #ccc !important;
+    padding: .8em !important;
+}
+.fontzises{
+    font-size: 1.6em !important;
+    color: #5e5e5e;
+    width: 2em;
+    text-align: center;
+}

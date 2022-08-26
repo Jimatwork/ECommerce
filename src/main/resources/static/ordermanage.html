@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>管理员管理</title>
+    <link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print"/>
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pageNav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/tab.css"/>
+    <link rel="stylesheet" type="text/css" href="css/user.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/pageNav.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/requestip.js"></script>
+    <style type="text/css">
+        .layui-table-cell {
+            height: 45px;
+            line-height: 45px;
+        }
+    </style>
+</head>
+<body>
+<div class="banDel" style="z-index: 100;">
+    <div class="delete" style="width: 200px;height: 50px;">
+        <p class="delP1"><img src="images/timg.gif" style="width: 50px;height: 50px;"/>请稍候</p>
+
+    </div>
+</div>
+<div id="pageAll" style="height: 840px;">
+    <div class="pageTop">
+        <div class="page">
+            <div style="margin-top: 5px">
+                <div class="layui-inline">
+                    <select id="orderselect" class="form-control">
+                        <option value="-1">全部</option>
+                        <option value="0">待付款</option>
+                        <option value="1">待发货</option>
+                        <option value="2">待收货</option>
+                        <option value="3">待评价</option>
+                    </select>
+                </div>
+                <div class="layui-inline">
+                    <input class="form-control" name="id" id="demoReload" autocomplete="off" placeholder="请输入搜索的编号">
+                </div>
+                <button class="btn btn-primary" id="search_order">搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <!-- user页面样式 -->
+        <div class="connoisseur">
+            <table class="layui-hide" id="test" lay-filter="demo"></table>
+        </div>
+        <!-- user页面样式end -->
+    </div>
+    <script type="text/html" id="barDemo">
+        <a class='layui-btn layui-btn-sm layui-btn-danger' lay-event='detail'>查看详细</a>
+    </script>
+    <!-- 传值的输入框-->
+    <div>
+        <input type="hidden" class="by_value1"/> <input type="hidden" class="by_value2"/>
+    </div>
+</div>
+</body>
+<script>
+    layui.use(['layer', 'table'], function () {
+        table = layui.table //表格
+        //执行一个 table 实例
+        table.render({
+            elem: '#test'
+            , url: getRequestIp() + 'getOrderAll' //数据接口
+            , id: 'testReload'
+            , method: 'post'
+            , toolbar: 'true'
+            , response: {
+                statusName: 'success', //数据状态的字段名称，默认：code
+                statusCode: true, //成功的状态码，默认：0
+                msgName: null, //状态信息的字段名称，默认：msg
+                countName: 'totalSize', //数据总数的字段名称，默认：count
+                dataName: 'list' //数据列表的字段名称，默认：data
+            },
+            page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局 //,curr: 5 //设定初始在第 5 页
+            }
+            , cellMinWidth: 10
+            , cols: [[ //表头
+                {field: 'id', title: '序号', sort: true, fixed: 'left', align: 'center'}
+                , {field: 'orderNumber', title: '订单编号', align: 'center'}
+                , {
+                    field: 'appUser', title: '购买者', align: 'center', templet: function (data) {
+                        return data.appUser.userName;
+                    }
+                }
+                , {
+                    field: 'business', title: '店铺', align: 'center', templet: function (data) {
+                        return data.business.name;
+                    }
+                }
+                , {field: 'realPrice', title: '实付款', align: 'center'}
+                , {
+                    field: 'createTime', title: '创建时间', align: 'center', templet: function (data) {
+                        return formatDate(data.createTime);
+                    }
+                }
+                , {
+                    field: 'closeTime', title: '完成时间', align: 'center', hide: "true", templet: function (data) {
+                        if (data.closeTime != null) {
+                            return formatDate(data.closeTime);
+                        }
+                        else {
+                            return "";
+                        }
+                    }
+                }
+                , {field: 'expressNum', title: '物流单号', align: 'center'}
+                , {field: 'sumPrice', title: '商品价', align: 'center'}
+                , {field: 'carriage', title: '运费', align: 'center'}
+                , {field: 'receiverName', title: '收获人', align: 'center', hide: "true"}
+                , {field: 'receiverPhone', title: '电话', align: 'center', hide: "true"}
+                , {field: 'receiverAddress', title: '地址', align: 'center', hide: "true"}
+                , {
+                    field: 'state', title: '状态', align: 'center', templet: function (data) {
+                        switch (data.state) {
+                            case 0:
+                                return "未付款";
+                                break;
+                            case 1:
+                                return "未付款";
+                                break;
+                            case 2:
+                                return "待收货";
+                                break;
+                            case 3:
+                                return "待评价";
+                                break;
+                            case 4:
+                                return "已评价";
+                                break;
+                        }
+                    }
+                }
+                , {
+                    field: 'payMethod', title: '支付方式', align: 'center', templet: function (data) {
+                        switch (data.payMethod) {
+                            case 1:
+                                return "微信支付";
+                                break;
+                            case 2:
+                                return "支付宝支付";
+                                break;
+                            case 3:
+                                return "线下支付";
+                                break;
+                        }
+                    }
+                }
+                , {field: 'remark', title: '备注', align: 'center', hide: "true"}
+                , {field: 'transactionNo', title: '交易号', align: 'center', hide: "true"}
+                , {
+                    field: 'deliveryTime', title: '发货时间', align: 'center', hide: "true", templet: function (data) {
+                        if (data.deliveryTime != null) {
+                            return formatDate(data.deliveryTime);
+                        }
+                        else {
+                            return "";
+                        }
+                    }
+                }
+                , {
+                    field: 'payTime', title: '付款时间', align: 'center', templet: function (data) {
+                        if (data.payTime != null) {
+                            return formatDate(data.payTime);
+                        }
+                        else {
+                            return "";
+                        }
+                    }
+                }
+                , {field: 'right', title: '操作', align: 'center', width: 160, templet: '#barDemo'}
+            ]]
+        });
+        //监听工具条
+        table.on('tool(demo)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'detail') {
+                sessionStorage.setItem("detail_data_id", data.id);
+                layer.open({
+                    type: 2,
+                    title: '查看详情',
+                    maxmin: true,
+                    shadeClose: true, // 点击遮罩关闭层
+                    area: ['1150px', '550px'],
+                    content: 'orderdetail.html' // iframe的url
+                });
+            } else if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                    $.ajax({
+                        cache: true,
+                        type: "POST",
+                        url: getRequestIp() + "deleteOrder",
+                        data: {
+                            id: data.id,
+                        },
+                        async: true,
+                        dataType: "json",
+                        error: function (request) {
+                            layer.msg('服务器错误', {
+                                icon: 2
+                            });
+                        },
+                        success: function (data) {
+                            if (data.success == true) {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 1
+                                });
+                            }
+                            else {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 2
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    });
+
+    //执行重载
+    $("#search_order").click(function () {
+        console.log($("#orderselect").val());
+        //获取选择的状态值
+        var state = $("#orderselect").val();
+        var orderNumber = $('#demoReload').val();
+
+        layui.use('table', function () {
+            var table = layui.table;
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                },
+                where: {
+                    orderNumber: orderNumber,
+                    state: state
+                }
+            });
+        });
+    });
+
+    function formatDate(now) {
+        var now = new Date(now);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (date < 10) {
+            date = "0" + date;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        return year + "-" + month + "-" + date + "   " + hour + ":" + minute + ":" + second;
+    }
+</script>
+</html>

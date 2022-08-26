@@ -1,0 +1,87 @@
+@-webkit-keyframes anim1{0%{opacity:0}29%{opacity:0}30%{opacity:1}100%{opacity:1}}@keyframes anim1{0%{opacity:0}29%{opacity:0}30%{opacity:1}100%{opacity:1}}@-webkit-keyframes anim2{0%{opacity:0}69%{opacity:0}70%{opacity:1}100%{opacity:1}}@keyframes anim2{0%{opacity:0}69%{opacity:0}70%{opacity:1}100%{opacity:1}}
+.audio-wp {
+    display: none;
+    margin-left: 4px;
+    text-indent: 0;
+    color: #519af2;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    vertical-align: middle
+}
+.audio-wp .audio-inner {
+    display: inline-block;
+    height: 20px
+}
+.audio-wp .audio-icon {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    background: url(./icons/audio_1.png)
+}
+.audio-wp .audio-icon-2, .audio-wp .audio-icon-3 {
+    position: relative;
+    display: inline-block;
+    width: 6px;
+    height: 23px
+}
+.audio-wp .audio-icon-2 {
+    margin-left: 3px;
+    background-image: url(./icons/audio_2.png)
+}
+.audio-wp .audio-icon-3 {
+    margin-left: -2px;
+    background-image: url(./icons/audio_3.png)
+}
+.audio-wp .desc {
+    position: relative;
+    top: 0.5em;
+    margin-left: 10px
+}
+.audio-wp.playing .audio-icon-2 {
+    -webkit-animation: anim1 1.2s infinite;
+    animation: anim1 1.2s infinite
+}
+.audio-wp.playing .audio-icon-3 {
+    -webkit-animation: anim2 1.2s infinite;
+    animation: anim2 1.2s infinite
+}
+#Footer_mask {
+    border-style: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1002;
+}
+
+.share_ul_top {
+    border-bottom: 1px solid #bababa;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    font-size: 1.5em;
+}
+
+.share_ul {
+    width: 100%;
+    text-align: center;
+}
+
+.share_ul li {
+    float: left;
+    width: 25%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.tts {
+    width:7em;
+    border-radius: 0.5em;
+    position: fixed;
+    bottom: 10em;
+    right: -1px;
+    z-index: 100;
+    background-color: #dfdfdf;
+}
+.yudu-div {
+    text-align: center;
+}

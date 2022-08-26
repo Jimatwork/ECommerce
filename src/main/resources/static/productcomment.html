@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/animate.css"/>
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bootstrap/css/style.css"/>
+    <link rel="stylesheet" href="bootstrap/css/plugins/iCheck/custom.css"/>
+    <link rel="stylesheet" href="bootstrap/css/plugins/cropper/cropper.css"/>
+    <link rel="stylesheet" href="bootstrap/js/plugins/layer/laydate/skins/default/laydate.css"/>
+    <link rel="stylesheet" href="bootstrap/css/gg-bootdo.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link href="css/haiersoft.css" rel="stylesheet" type="text/css" media="screen,print"/>
+    <link rel="stylesheet" type="text/css" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pageNav.css"/>
+    <link rel="stylesheet" type="text/css" href="css/tab.css"/>
+    <link rel="stylesheet" type="text/css" href="css/user.css"/>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <script src="layui/layui.js" charset="utf-8"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/pageNav.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/requestip.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div id="pageAll" style="height: 840px;">
+    <div class="page">
+        <table class="layui-hide" id="test" lay-filter="demo"></table>
+    </div>
+    <script type="text/html" id="barDemo">
+        <!--<a class='layui-btn layui-btn-sm' lay-event='detail'>查看评论</a>-->
+        <a class='layui-btn layui-btn-sm layui-btn-danger' lay-event='del'>删除</a>
+    </script>
+</div>
+</body>
+<script>
+    layui.use('table', function () {
+        var table = layui.table
+        table.render({
+            elem: '#test',
+            width: 1070,
+            method: 'post',
+            where: {pid: sessionStorage.getItem("comment_manage_id")},
+            url: getRequestIp() + 'getCommentByPid',
+            response: {
+                statusName: 'success', //数据状态的字段名称，默认：code
+                statusCode: true, //成功的状态码，默认：0
+                msgName: null, //状态信息的字段名称，默认：msg
+                countName: 'totalSize', //数据总数的字段名称，默认：count
+                dataName: 'list' //数据列表的字段名称，默认：data
+            },
+            id: 'testReload',
+            page: true,
+            cols: [[
+                {field: 'id', title: '序号', sort: true, align: 'center', fixed: 'left'}
+                , {
+                    field: 'type', title: '类型', align: 'center', templet: function (data) {
+                        switch (data.type) {
+                            case 1:
+                                return "<span class='label label-success'>好评</span>";
+                            case 2:
+                                return "<span class='label label-warning'>中评</span>";
+                            case 3:
+                                return "<span class='label label-danger'>差评</span>";
+                        }
+                    }
+                }
+                , {
+                    field: 'appUser', title: '评论人', align: 'center', templet: function (data) {
+                        return data.appUser.userName;
+                    }
+                }
+                , {
+                    field: 'text', title: '评论内容', align: 'center'
+                }
+                , {
+                    field: 'specs', title: '规格', align: 'center', templet: function (data) {
+                        if (data.specs == null) {
+                            return '此规格已被删除';
+                        }
+                        return data.specs.specsName;
+                    }
+                }
+                , {
+                    field: 'date', title: '时间', align: 'center', templet: function (data) {
+                        return formatDate(data.date);
+                    }
+                }
+                , {field: 'right', title: '操作', align: 'center', templet: "#barDemo"}
+            ]]
+        });
+        //监听工具条
+        table.on('tool(demo)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+                , layEvent = obj.event; //获得 lay-event 对应的值
+            if (layEvent === 'detail') {
+                sessionStorage.setItem("detail_comment_content", data.content);
+                layer.open({
+                    type: 2,
+                    title: '查看评论',
+                    maxmin: true,
+                    shadeClose: true, // 点击遮罩关闭层
+                    area: ['1050px', '450px'],
+                    content: 'commentdetail.html' // iframe的url
+                });
+            } else if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
+                    $.ajax({
+                        cache: true,
+                        type: "POST",
+                        url: getRequestIp() + "delProductComment",
+                        data: {
+                            id: data.id,
+                        },
+                        async: true,
+                        dataType: "json",
+                        error: function (request) {
+                            layer.msg('服务器错误', {
+                                icon: 2
+                            });
+                        },
+                        success: function (data) {
+                            if (data.code == 0) {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 1
+                                });
+                            }
+                            else {
+                                layer.msg('' + data.msg + '', {
+                                    icon: 2
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    });
+
+    function formatDate(now) {
+        var now = new Date(now);
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (date < 10) {
+            date = "0" + date;
+        }
+        if (minute < 10) {
+            minute = "0" + minute;
+        }
+        if (second < 10) {
+            second = "0" + second;
+        }
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+        return year + "-" + month + "-" + date + "   " + hour + ":" + minute + ":" + second;
+    }
+</script>
+</body>
+</html>

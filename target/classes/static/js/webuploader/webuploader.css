@@ -1,0 +1,86 @@
+.webuploader-container {
+	position: relative;
+}
+
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	/* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #00b7ee;
+	padding: 5px 5px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.webuploader-pick-hover {
+	background: #00a2d4;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+#picker,#video_picker
+ {
+	height: 35px;
+	position: absolute;
+	left: 332px;
+	top: 4px;
+	width: 80px;
+}
+#picker1,
+#picker2,
+#db_picker1,
+#db_picker2,
+#db_picker3 {
+	height: 35px;
+	position: absolute;
+	right: 14px;
+	top: 4px;
+	width: 80px;
+}
+
+#jindutiao,
+#jindutiao1,
+#jindutiao2,
+#db_jindutiao1,
+#db_jindutiao2,
+#db_jindutiao3,
+#video_jindutiao {
+	position: absolute;
+	left: 0px;
+	top: 7px;
+}
+.dd_dd_ss{
+	height: 36px;
+	width: 80px;
+	background-color: #337AB7;
+	border-radius: 5px;
+	position: absolute;
+	right:120px;
+	top:14px;
+	color: white;
+}
+.xz_img{
+	height: 36px;
+	width: 80px;
+	background-color: #337AB7;
+	border-radius: 5px;
+	position: absolute;
+	right:120px;
+	top:14px;
+	color: white;
+}

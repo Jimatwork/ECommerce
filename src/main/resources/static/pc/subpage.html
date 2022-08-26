@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>酷编</title>
+		<link rel="stylesheet" href="css/subpage.css" />
+		<link rel="stylesheet" href="css/slideshow.css" />
+		<link rel="stylesheet" href="css/firstPage.css" />
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script type="text/javascript" src="js/slideshow.js" ></script>
+		<script type="text/javascript" src="js/subpage.js" ></script>
+		<script type="text/javascript" src="js/paging.js" ></script>
+	</head>
+	<body>
+		<header>
+			<h4 id="heigtop" style="line-height: 48px;text-align: center;"></h4>
+
+			<div class="banner">
+				<img class="change pre"  src="img/pre.png" >
+				<img class="change next" src="img/next.png" >
+				
+				<div class="cirbox" >
+					<div class="cir cr"></div>
+					<div class="cir"></div>
+					<div class="cir"></div>
+					<div class="cir"></div>
+				</div>
+				<div class="imgbox">
+					
+				</div>	
+			</div>
+		</header>
+		<article>
+			<ul class="journalism_left">
+				<li>
+					
+				</li>
+			</ul>
+		</article>
+		<footer>
+			<div id="page" class="page_div"></div>
+		</footer>
+	</body>
+	<script>
+		$('body').on('click', '.tiaoz', function(){
+			let data_txt = $(this).attr('data_txt');
+			sessionStorage.setItem('htmls', data_txt);
+			window.location.href= "displayDesign.html"
+		});
+	</script>
+</html>

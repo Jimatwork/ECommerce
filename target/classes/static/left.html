@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>首页左侧导航</title>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/requestip.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/left.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+
+    <head></head>
+
+<body id="bg">
+<!-- 左边节点 -->
+<div class="container">
+
+    <div class="leftsidebar_box">
+        <dl class="system_log" id="headline_dl">
+            <dt>
+                <img class="icon1" src="img/coin03.png"/><img class="icon2"
+                                                              src="img/coin04.png"/> 热门管理<img class="icon3"
+                                                                                              src="img/coin19.png"/><img
+                    class="icon4" src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="headAll.html" target="main">全部</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <!--<dl class="system_log" id="hot_dl">
+            <dt>
+                <img class="icon1" src="images/hot1.png"
+                     style="top: 0px; left: 0px;"/><img class="icon2"
+                                                        src="images/hot.png" style="top: 0px; left: 0px;"/> 视频管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+        </dl>-->
+        <dl class="system_log" id="find_dl">
+            <dt>
+                <img class="icon1" src="images/fx1.png"
+                     style="top: 10px; left: 8px;"/><img class="icon2"
+                                                         src="images/fx.png" style="top: 10px; left: 8px;"/> 最新管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="findAll.html" target="main">全部</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <dl class="system_log">
+            <dt>
+                <img class="icon1" src="img/coin07.png"/><img class="icon2"
+                                                              src="img/coin08.png"/> 用户管理<img class="icon3"
+                                                                                              src="img/coin19.png"/><img
+                    class="icon4" src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a href="user.html" target="main" class="cks">用户管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <!--<dl class="system_log">
+    <dt>
+        <img class="icon1" src="img/coin11.png" /><img class="icon2"
+            src="img/coin12.png" /> Banner管理<img class="icon3"
+            src="img/coin19.png" /><img class="icon4" src="img/coin20.png" />
+    </dt>
+    <dd>
+        <img class="coin11" src="img/coin111.png" /><img class="coin22"
+            src="img/coin222.png" /> <a class="cks" href="banner.html"
+            target="main">Banner管理</a><img class="icon5" src="img/coin21.png" />
+    </dd>
+</dl>-->
+        <!--<dl class="system_log">
+            <dt>
+                <img class="icon1" src="images/zm1.png"/><img class="icon2"
+                                                              src="images/zm.png"/> 字幕管理<img class="icon3"
+                                                                                             src="img/coin19.png"/><img
+                    class="icon4" src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="rolltitle.html" target="main">滚动字幕</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>-->
+        <dl class="system_log">
+            <dt>
+                <img class="icon1" src="images/gg1.png"
+                     style="top: 0px; left: 0px;"/><img class="icon2"
+                                                        src="images/gg.png" style="top: 0px; left: 0px;"/> 广告管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="advertising.html" target="main">普通广告管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="browseAdvertising.html" target="main">浏览区广告管理</a><img class="icon5"
+                                                                                           src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <dl class="system_log">
+            <dt>
+                <img class="icon1" src="img/coinL1.png"/><img class="icon2"
+                                                              src="img/coinL2.png"/> 系统管理<img class="icon3"
+                                                                                              src="img/coin19.png"/><img
+                    class="icon4" src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a href="changepwd.html" target="main" class="cks">修改密码</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a href="changeUser.html" target="main" class="cks">修改用户信息</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <!--<dd>
+                <img class="coin11" src="img/coin111.png" /><img class="coin22" src="img/coin222.png" />
+                <a class="cks" href="server.html" target="main">设置服务器</a><img class="icon5" src="img/coin21.png" />
+            </dd>-->
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" id="quit_sys" href="javascript:void(0)" target="_blank">退出系统</a><img class="icon5"
+                                                                                                    src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <dl class="system_log" id="vip_user" style="display: none;">
+            <dt>
+                <img class="icon1" src="images/gg1.png"
+                     style="top: 0px; left: 0px;"/><img class="icon2"
+                                                        src="images/gg.png" style="top: 0px; left: 0px;"/> 文章管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="draftcon.html" target="main">草稿箱</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="myEssayAll.html" target="main">全部</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <dl class="system_log" id="user_shop" style="display: none;">
+            <dt>
+                <img class="icon1" src="img/coin17.png"
+                     style="top: 10px; left: 10px;"/><img class="icon2"
+                                                          src="img/coin18.png" style="top: 10px; left: 10px;"/> 商铺管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="myOrder.html" target="main">订单管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+			 <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="myAccount.html" target="main">账户信息</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+         <dl class="system_log" id="user_shopping" style="display: none;">
+            <dt>
+                <img class="icon1" src="img/coin17.png"
+                     style="top: 10px; left: 10px;"/><img class="icon2"
+                                                          src="img/coin18.png" style="top: 10px; left: 10px;"/> 商品管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd class="shopping_all">
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="myCommodityAll.html" target="main">全部</a><img class="icon5" src="img/coin21.png"/>
+            	<p style="display: none;">0</p>
+            </dd>
+        </dl>
+        <!--<dl class="system_log" id="vip_user3" style="display: none;">
+            <dt>
+                <img class="icon1" src="images/fx1.png"
+                     style="top: 8px; left: 6px;"/><img class="icon2"
+                                                        src="images/fx.png" style="top: 8px; left: 6px;"/> 视频管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="draftconVideo.html" target="main">草稿箱</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="myVideoAll.html" target="main">全部</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>-->
+
+        <dl class="system_log" id="vip_user2" style="display: none;">
+            <dt>
+                <img class="icon1" src="img/coinL1.png"
+                     style="top: 9px; left: 9px;"/><img class="icon2"
+                                                        src="img/coinL2.png" style="top: 9px; left: 9px;"/> 个人管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <!--<dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="liveSet.html" target="main">直播设置</a><img class="icon5" src="img/coin21.png"/>
+            </dd>-->
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="watermark.html" target="main">个人设置</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+        <dl class="system_log" id="shoping" style="display:block;">
+            <dt>
+                <img class="icon1" src="img/business1.png"
+                     style="top: 9px; left: 9px;"/><img class="icon2"
+                                                        src="img/business2.png" style="top: 9px; left: 9px;"/> 电商管理<img
+                    class="icon3" src="img/coin19.png"/><img class="icon4"
+                                                             src="img/coin20.png"/>
+            </dt>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="business.html" target="main">商铺管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="homebanner.html" target="main">首页轮播图管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="product.html" target="main">商品管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="ordermanage.html" target="main">订单管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+            <dd>
+                <img class="coin11" src="img/coin111.png"/><img class="coin22" src="img/coin222.png"/>
+                <a class="cks" href="shopClassify.html" target="main">分类管理</a><img class="icon5" src="img/coin21.png"/>
+            </dd>
+        </dl>
+    </div>
+
+</div>
+</body>
+
+</html>
